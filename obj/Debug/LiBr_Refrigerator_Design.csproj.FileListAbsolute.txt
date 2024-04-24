@@ -1,0 +1,13 @@
+G:\MyProgram\LiBr_Refrigerator_Design\bin\Debug\LiBr_Refrigerator_Design.exe.config
+G:\MyProgram\LiBr_Refrigerator_Design\bin\Debug\LiBr_Refrigerator_Design.exe
+G:\MyProgram\LiBr_Refrigerator_Design\bin\Debug\LiBr_Refrigerator_Design.pdb
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.csproj.AssemblyReference.cache
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.Properties.Resources.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.csproj.GenerateResource.cache
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.csproj.CoreCompileInputs.cache
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.exe
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.pdb
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.CondenserForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.AbsorbForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.mainForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EvaporatorForm.resources
