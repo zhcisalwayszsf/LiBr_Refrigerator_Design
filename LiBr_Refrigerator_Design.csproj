@@ -58,12 +58,30 @@
     <Compile Include="EvaporatorForm.Designer.cs">
       <DependentUpon>EvaporatorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EXHForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXHForm.Designer.cs">
+      <DependentUpon>EXHForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Function.cs" />
     <Compile Include="CondenserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CondenserForm.Designer.cs">
       <DependentUpon>CondenserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GhForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GhForm.Designer.cs">
+      <DependentUpon>GhForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlForm.Designer.cs">
+      <DependentUpon>GlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -81,6 +99,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EvaporatorForm.resx">
       <DependentUpon>EvaporatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXHForm.resx">
+      <DependentUpon>EXHForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GhForm.resx">
+      <DependentUpon>GhForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlForm.resx">
+      <DependentUpon>GlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

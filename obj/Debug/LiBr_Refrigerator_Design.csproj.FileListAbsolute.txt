@@ -11,3 +11,6 @@ G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.Condens
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.AbsorbForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.mainForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EvaporatorForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.GhForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.GlForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EXHForm.resources

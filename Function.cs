@@ -355,6 +355,99 @@ namespace LiBr_Refrigerator_Design
             return a0;
         }
 
+        /// <summary>
+        /// 高压发生器传热面积计算
+        /// </summary>
+        /// <param name="q">高发负荷</param>
+        /// <param name="k">传热系数</param>
+        /// <param name="th">，加热蒸汽（热源）相应压力下的饱和温度</param>
+        /// <param name="t11">进入高发的过冷稀溶液（取相应高发压力下的饱和温度）</param>
+        /// <param name="t12">高发出口浓溶液温度</param>
+        /// <returns></returns>
+        public double  Gh_Area(double q,double k,double th,double t11,double t12)
+        {
+            double a= 1000*q / k /(th - t11 - 0.65*(t12 -t11));
+            return a;
+        }
+
+        
+        /// <summary>
+        /// 高发管外表面传热系数
+        /// </summary>
+        /// <param name="lambda">液相水的导热系数/param>
+        /// <param name="mu">液相水的粘性系数</param>
+        /// <param name="cp">液相水定压比热容J/(kg·k)</param>
+        /// <param name="di">管内径</param>
+        /// <param name="m">气液混合的质流密度</param>
+        /// <param name="pho_l">液相水密度</param>
+        /// <param name="pho_g">蒸气密度</param>
+        /// <returns></returns>
+        public double Gh_ai(double lambda,double mu,double cp,double di, double m,double pho_l,double pho_g)
+        {
+            double ai = 0.024 * lambda / di * Math.Pow(m * di / mu, 0.8) * Math.Pow(cp * mu / lambda, 0.43) * (1 + Math.Pow(pho_l / pho_g, 0.5)) / 2;
+            return ai;
+        }
+
+        public  double Gh_a0()
+        {
+            return 15000d ;
+        }
+
+        /// <summary>
+        /// 低压发生器传热面积计算
+        /// </summary>
+        /// <param name="q">高发负荷</param>
+        /// <param name="k">传热系数</param>
+        /// <param name="t3b"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <returns></returns>
+        public double Gl_Area(double q, double k, double t3b,double t3,double t4)
+        {
+            double a = 1000 * q / k / (t3b - t3 - 0.65 * (t4 - t3));
+            return a;
+        }
+
+        /// <summary>
+        /// 低发管外表面传热系数
+        /// </summary>
+        /// <param name="lambda">液相水的导热系数/param>
+        /// <param name="mu">液相水的粘性系数</param>
+        /// <param name="cp">液相水定压比热容J/(kg·k)</param>
+        /// <param name="di">管内径</param>
+        /// <param name="m">气液混合的质流密度</param>
+        /// <param name="pho_l">液相水密度</param>
+        /// <param name="pho_g">蒸气密度</param>
+        /// <returns></returns>
+        public double Gl_ai(double lambda, double mu, double cp, double di, double m, double pho_l, double pho_g)
+        {
+            double ai = 0.024 * lambda / di * Math.Pow(m * di / mu, 0.8) * Math.Pow(cp * mu / lambda, 0.43) * (1 + Math.Pow(pho_l / pho_g, 0.5)) / 2;
+            return ai;
+        }
+
+        public double Gl_a0()
+        {
+            return 15000d;
+        }
+        
+
+        /// <summary>
+        /// 高温热交换器传热面积
+        /// </summary>
+        /// <param name="q">负荷</param>
+        /// <param name="k">传热系数</param>
+        /// <param name="t12"></param>
+        /// <param name="t10"></param>
+        /// <param name="t9"></param>
+        /// <param name="t2"></param>
+        /// <param name="tw"></param>
+        /// <returns></returns>
+        public double EXH_Area(double q,double k,double t12, double t10, double t9, double t2, double tw)
+        {
+            double a = 1000 * q / k / (t12 - t2 - 0.5 * (t10 - tw) - (t9 - t2));
+            return a;
+        }
+        
 
     }
 }

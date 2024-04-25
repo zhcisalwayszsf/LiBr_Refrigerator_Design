@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +10,10 @@ using System.Windows.Forms;
 
 namespace LiBr_Refrigerator_Design
 {
-    public partial class AbsorbForm : Form
+    public partial class GlForm : Form
     {
 
-        //确保输入
+        Function myFunction = new Function();
         private void NoInputMessage()
         {
             string Message = "请输入完整数据";
@@ -52,69 +51,71 @@ namespace LiBr_Refrigerator_Design
             }
         }
 
-
-        Function myFunction = new Function();
-
-        public AbsorbForm()
+        public GlForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox_d0.Text == string.Empty |
-                textBox_di.Text ==string.Empty|
+            if (textBox_di.Text == string.Empty |
+                textBox_d0.Text == string.Empty |
+                textBox_ri.Text == string.Empty |
                 textBox_r0.Text == string.Empty |
-                textBox_ri.Text == string.Empty|
-                textBox_tw.Text == string.Empty | 
-                textBox_tw1.Text == string.Empty|
-                textBox_t9.Text == string.Empty | 
-                textBox_t2.Text == string.Empty|
-                textBox_xi.Text == string.Empty | 
-                textBox_gamma.Text == string.Empty|
-                textBox_tube_lambda.Text == string.Empty | 
-                textBox_t_inTube.Text == string.Empty|
-                textBox_absorb_q.Text == string.Empty | 
-                textBox_flu_qv.Text == string.Empty|
-                textBox_tube_length.Text == string.Empty| 
-                textBox_m.Text == string.Empty|
-                textBox_first_K.Text ==string.Empty|
-                textBox_middle.Text == string.Empty)
+                textBox_gh_q.Text == string.Empty |
+                textBox_t3b.Text == string.Empty |
+                textBox_t3.Text == string.Empty |
+                textBox_t4.Text == string.Empty |
+                textBox_tube_length.Text == string.Empty |
+                textBox_flu_qv.Text == string.Empty |
+                textBox_m.Text == string.Empty |
+                textBox_middle.Text == string.Empty |
+                textBox_tube_lambda.Text == string.Empty |
+                textBox_pho_l.Text == string.Empty |
+                textBox_pho_g.Text == string.Empty |
+                textBox_cp.Text == string.Empty |
+                textBox_mixed_m.Text == string.Empty |
+                textBox_first_K.Text == string.Empty |
+                textBox_a0.Text == string.Empty)
             {
                 NoInputMessage();
             }
             else
             {
                 bool first_conculate = true;
-                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, tw, tw1, t9, t2, m, flu_qv, t_inTube, q_a, tube_lambda, xi, gamma;
+                double mess = double.Parse(textBox_first_K.Text);
+                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t3, t4, t3b, m, flu_qv, mixed_m, q_gl, tube_lambda, pho_g, pho_l, mu, water_lambda, cp;
                 d0 = double.Parse(textBox_d0.Text);
                 di = double.Parse(textBox_di.Text);
                 r0 = double.Parse(textBox_r0.Text);
                 ri = double.Parse(textBox_ri.Text);
-                tw = double.Parse(textBox_tw.Text);
-                tw1 = double.Parse(textBox_tw1.Text);
-                t9 = double.Parse(textBox_t9.Text);
-                t2 = double.Parse(textBox_t2.Text);
-                xi = double.Parse(textBox_xi.Text);
-                gamma = double.Parse(textBox_gamma.Text);
+                t3 = double.Parse(textBox_t3.Text);
+                t4 = double.Parse(textBox_t4.Text);
+                t3b = double.Parse(textBox_t3b.Text);
+                cp = double.Parse(textBox_cp.Text);
                 tube_lambda = double.Parse(textBox_tube_lambda.Text);
-                t_inTube = double.Parse(textBox_t_inTube.Text);
-                q_a = double.Parse(textBox_absorb_q.Text);
+                mixed_m = double.Parse(textBox_mixed_m.Text);
+                pho_g = double.Parse(textBox_pho_g.Text);
+                q_gl = double.Parse(textBox_gh_q.Text);
                 flu_qv = double.Parse(textBox_flu_qv.Text);
                 l = double.Parse(textBox_tube_length.Text);
                 m = double.Parse(textBox_m.Text);
-                double mess = double.Parse(textBox_first_K.Text);
+                mu = myFunction.L_H20_mu(t3);
+                water_lambda = myFunction.L_H20_lambda(t3);
+                pho_l = double.Parse(textBox_pho_l.Text);
 
                 for (int i = 1000; i > 0; i--)
                 {
-                    a = myFunction.Absorb_Area(q_a, mess, tw1, tw, t9, t2);
+
+                    a = myFunction.Gl_Area(q_gl, mess, t3b, t3, t4);
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
-                    ai = myFunction.Absorb_ai(speed, di, t_inTube);
-                    a0 = myFunction.Absorb_a0(xi, gamma);
+                    ai = myFunction.Gl_ai(water_lambda, mu, cp, di, mixed_m, pho_l, pho_g);
+                    a0 = double.Parse(textBox_a0.Text);//a0查表
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
                     k = myFunction.average_K2(ki, k0);
+
 
                     if (first_conculate)
                     {
@@ -126,6 +127,7 @@ namespace LiBr_Refrigerator_Design
                         textBox_result_ai.Text = ai.ToString();
                         first_conculate = false;
                     }
+
 
                     if (Math.Abs(mess - k) > Math.Abs(double.Parse(textBox_middle.Text)))
                     {
@@ -142,10 +144,9 @@ namespace LiBr_Refrigerator_Design
                         {
                             first_conculate = true;
                         }
-                        break;                   
+                        break;
                     }
                 }
-            
             }
         }
     }

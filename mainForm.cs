@@ -34,5 +34,17 @@ namespace LiBr_Refrigerator_Design
             Form A_Evaporator = new EvaporatorForm();
             A_Evaporator.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form A_Gh = new GhForm();
+            A_Gh.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form A_Gl = new GlForm();
+            A_Gl.ShowDialog();
+        }
     }
 }

@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "G:\\MyProgram\\LiBr_Refrigerator_Design\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|g:\\myprogram\\libr_refrigerator_design\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|solutionrelative:function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|G:\\MyProgram\\LiBr_Refrigerator_Design\\evaporatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|solutionrelative:evaporatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|G:\\MyProgram\\LiBr_Refrigerator_Design\\evaporatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|solutionrelative:evaporatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|G:\\MyProgram\\LiBr_Refrigerator_Design\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|g:\\myprogram\\libr_refrigerator_design\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|G:\\MyProgram\\LiBr_Refrigerator_Design\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADA381C2-5DB0-48B7-834D-69B237C6AF90}|LiBr_Refrigerator_Design.csproj|solutionrelative:function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Function.cs",
               "DocumentMoniker": "G:\\MyProgram\\LiBr_Refrigerator_Design\\Function.cs",
               "RelativeDocumentMoniker": "Function.cs",
               "ToolTip": "G:\\MyProgram\\LiBr_Refrigerator_Design\\Function.cs",
               "RelativeToolTip": "Function.cs",
-              "ViewState": "AQIAADcBAAAAAAAAAAAswFUBAAAaAAAA",
+              "ViewState": "AQIAAKgBAAAAAAAAAAAswMEBAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T05:58:10.815Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EvaporatorForm.cs",
-              "DocumentMoniker": "G:\\MyProgram\\LiBr_Refrigerator_Design\\EvaporatorForm.cs",
-              "RelativeDocumentMoniker": "EvaporatorForm.cs",
-              "ToolTip": "G:\\MyProgram\\LiBr_Refrigerator_Design\\EvaporatorForm.cs",
-              "RelativeToolTip": "EvaporatorForm.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAAwFgAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T11:16:13.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EvaporatorForm.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "G:\\MyProgram\\LiBr_Refrigerator_Design\\EvaporatorForm.cs",
-              "RelativeDocumentMoniker": "EvaporatorForm.cs",
-              "ToolTip": "G:\\MyProgram\\LiBr_Refrigerator_Design\\EvaporatorForm.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "EvaporatorForm.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T11:15:09.61Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "mainForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "G:\\MyProgram\\LiBr_Refrigerator_Design\\mainForm.cs",
               "RelativeDocumentMoniker": "mainForm.cs",
               "ToolTip": "G:\\MyProgram\\LiBr_Refrigerator_Design\\mainForm.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "mainForm.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T09:48:06.048Z"
+              "WhenOpened": "2024-04-25T08:21:34.028Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
             }
           ]
         }
