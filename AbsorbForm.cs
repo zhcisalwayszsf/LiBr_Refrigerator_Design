@@ -138,6 +138,8 @@ namespace LiBr_Refrigerator_Design
                         textBox_a.Text = a.ToString();
                         textBox_v.Text = speed.ToString();
                         textBox_n.Text = n.ToString();
+                        textBox_ai.Text = ai.ToString();
+                        textBox_a0.Text = a0.ToString();
                         if (!first_conculate)
                         {
                             first_conculate = true;

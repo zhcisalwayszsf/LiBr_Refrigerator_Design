@@ -77,7 +77,7 @@ namespace LiBr_Refrigerator_Design
                 textBox_cp.Text == string.Empty |
                 textBox_mixed_m.Text == string.Empty|
                 textBox_first_K.Text == string.Empty|
-                textBox_a0.Text == string.Empty)
+                textBox_a0_input.Text == string.Empty)
             {
                 NoInputMessage();
             }
@@ -112,7 +112,7 @@ namespace LiBr_Refrigerator_Design
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
                     ai = myFunction.Gh_ai(water_lambda,mu,cp,di,mixed_m,pho_l,pho_g);
-                    a0 = double.Parse(textBox_a0.Text);//a0查表
+                    a0 = double.Parse(textBox_a0_input.Text);//a0查表
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
                     k = myFunction.average_K2(ki, k0);
@@ -141,6 +141,10 @@ namespace LiBr_Refrigerator_Design
                         textBox_a.Text = a.ToString();
                         textBox_v.Text = speed.ToString();
                         textBox_n.Text = n.ToString();
+                        textBox_mu.Text = mu.ToString();
+                        textBox_lambda.Text = water_lambda.ToString();
+                        textBox_a0.Text = a0.ToString();
+                        textBox_ai.Text = ai.ToString();
                         if (!first_conculate)
                         {
                             first_conculate = true;

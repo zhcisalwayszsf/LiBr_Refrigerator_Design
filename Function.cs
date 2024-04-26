@@ -79,7 +79,7 @@ namespace LiBr_Refrigerator_Design
         /// <summary>
         /// 管内流速计算
         /// </summary>
-        /// <param name="v">管内流体的体积流量</param>
+        /// <param name="q_v">管内流体的体积流量</param>
         /// <param name="n">管子数</param>
         /// <param name="m">管程</param>
         /// /// <param name="di">管内径</param>

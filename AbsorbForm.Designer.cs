@@ -56,6 +56,10 @@
             this.textBox_middle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox_ai = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox_a0 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox_n = new System.Windows.Forms.TextBox();
@@ -100,7 +104,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(39, 80);
+            this.label13.Location = new System.Drawing.Point(9, 50);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 15);
             this.label13.TabIndex = 29;
@@ -351,6 +355,10 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label27);
+            this.panel4.Controls.Add(this.textBox_ai);
+            this.panel4.Controls.Add(this.label28);
+            this.panel4.Controls.Add(this.textBox_a0);
             this.panel4.Controls.Add(this.label24);
             this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.textBox_n);
@@ -365,10 +373,44 @@
             this.panel4.Size = new System.Drawing.Size(751, 115);
             this.panel4.TabIndex = 3;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(291, 90);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(128, 15);
+            this.label27.TabIndex = 61;
+            this.label27.Text = "管内传热系数ai：";
+            // 
+            // textBox_ai
+            // 
+            this.textBox_ai.Location = new System.Drawing.Point(425, 84);
+            this.textBox_ai.Name = "textBox_ai";
+            this.textBox_ai.ReadOnly = true;
+            this.textBox_ai.Size = new System.Drawing.Size(107, 25);
+            this.textBox_ai.TabIndex = 60;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(9, 90);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(128, 15);
+            this.label28.TabIndex = 59;
+            this.label28.Text = "管外传热系数a0：";
+            // 
+            // textBox_a0
+            // 
+            this.textBox_a0.Location = new System.Drawing.Point(143, 84);
+            this.textBox_a0.Name = "textBox_a0";
+            this.textBox_a0.ReadOnly = true;
+            this.textBox_a0.Size = new System.Drawing.Size(107, 25);
+            this.textBox_a0.TabIndex = 58;
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(387, 80);
+            this.label24.Location = new System.Drawing.Point(291, 50);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(60, 15);
             this.label24.TabIndex = 37;
@@ -377,7 +419,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(387, 39);
+            this.label25.Location = new System.Drawing.Point(291, 11);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 15);
             this.label25.TabIndex = 36;
@@ -385,7 +427,7 @@
             // 
             // textBox_n
             // 
-            this.textBox_n.Location = new System.Drawing.Point(483, 36);
+            this.textBox_n.Location = new System.Drawing.Point(387, 8);
             this.textBox_n.Name = "textBox_n";
             this.textBox_n.ReadOnly = true;
             this.textBox_n.Size = new System.Drawing.Size(125, 25);
@@ -393,7 +435,7 @@
             // 
             // textBox_v
             // 
-            this.textBox_v.Location = new System.Drawing.Point(483, 77);
+            this.textBox_v.Location = new System.Drawing.Point(387, 47);
             this.textBox_v.Name = "textBox_v";
             this.textBox_v.ReadOnly = true;
             this.textBox_v.Size = new System.Drawing.Size(125, 25);
@@ -402,7 +444,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(39, 32);
+            this.label12.Location = new System.Drawing.Point(9, 11);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 15);
             this.label12.TabIndex = 28;
@@ -410,7 +452,7 @@
             // 
             // textBox_a
             // 
-            this.textBox_a.Location = new System.Drawing.Point(135, 29);
+            this.textBox_a.Location = new System.Drawing.Point(105, 8);
             this.textBox_a.Name = "textBox_a";
             this.textBox_a.ReadOnly = true;
             this.textBox_a.Size = new System.Drawing.Size(158, 25);
@@ -418,7 +460,7 @@
             // 
             // textBox_k
             // 
-            this.textBox_k.Location = new System.Drawing.Point(135, 77);
+            this.textBox_k.Location = new System.Drawing.Point(105, 47);
             this.textBox_k.Name = "textBox_k";
             this.textBox_k.ReadOnly = true;
             this.textBox_k.Size = new System.Drawing.Size(158, 25);
@@ -531,7 +573,7 @@
             this.textBox_gamma.Name = "textBox_gamma";
             this.textBox_gamma.Size = new System.Drawing.Size(75, 25);
             this.textBox_gamma.TabIndex = 5;
-            this.textBox_gamma.Text = "150000";
+            this.textBox_gamma.Text = "4896";
             this.textBox_gamma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label_r0_out
@@ -798,5 +840,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox_n;
         private System.Windows.Forms.TextBox textBox_v;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox_ai;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox_a0;
     }
 }

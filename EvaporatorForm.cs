@@ -141,7 +141,12 @@ namespace LiBr_Refrigerator_Design
                         textBox_a.Text = a.ToString();
                         textBox_v.Text = speed.ToString();
                         textBox_n.Text = n.ToString();
-                        if(!first_conculate)
+                        textBox_pr.Text = Pr.ToString();
+                        textBox_lambda.Text = water_lambda.ToString();
+                        textBox_a0.Text = a0.ToString();
+                        textBox_ai.Text = ai.ToString();
+                        textBox_nu.Text = nu.ToString();
+                        if (!first_conculate)
                         {
                             first_conculate = true;
                         }
