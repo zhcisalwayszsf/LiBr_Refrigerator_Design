@@ -61,7 +61,7 @@ namespace LiBr_Refrigerator_Design
         public CondenserForm()
         {
             InitializeComponent();
-
+            comboBox_k_model.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,12 +98,13 @@ namespace LiBr_Refrigerator_Design
                     double n = myFunction.tubeNumb(a, double.Parse(textBox_tube_length.Text), double.Parse(textBox_d0.Text));
                     double speed = myFunction.fluSpeed(double.Parse(textBox_flu_qv.Text), n, double.Parse(textBox_m.Text), double.Parse(textBox_di.Text));
                     double ai = myFunction.Condenser_ai(double.Parse(textBox_tw1.Text), double.Parse(textBox_tw2.Text), speed, double.Parse(textBox_di.Text));
-                    double a0 = myFunction.Condenser_a0(double.Parse(textBox_h2o_r.Text), g, pho, myFunction.L_H20_mu(double.Parse(textBox_tk.Text)), myFunction.L_H20_lambda(double.Parse(textBox_tk.Text)), double.Parse(textBox_tk.Text), double.Parse(textBox_tk.Text) + 2d, 0.019d * 10d);
+                    double a0 = myFunction.Condenser_a0(double.Parse(textBox_h2o_r.Text), g, pho, myFunction.L_H20_mu(double.Parse(textBox_tk.Text)), myFunction.L_H20_lambda(double.Parse(textBox_tk.Text)), double.Parse(textBox_tk.Text), double.Parse(textBox_tk.Text) + 2d, 0.019d * double.Parse(textBox_L_numb.Text));
+                    
                     //double a0 = myFunction.Condenser_a02(double.Parse(textBox_h2o_r.Text), g, pho, myFunction.L_H20_mu(double.Parse(textBox_tk.Text)), myFunction.L_H20_lambda(double.Parse(textBox_tk.Text)), double.Parse(textBox_d0.Text),10d);
                     double ki = myFunction.K_in(a0, ai, double.Parse(textBox_r0.Text), double.Parse(textBox_ri.Text), double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text));
                     double k0 = myFunction.K_out(a0, ai, double.Parse(textBox_r0.Text), double.Parse(textBox_ri.Text), double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text));
-                    double k = myFunction.average_K2(ki, k0);
-                    //double k = myFunction.average_K(ki, k0,double.Parse(textBox_d0.Text),double.Parse(textBox_di.Text),double.Parse(textBox_tube_lambda.Text));
+                    double k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text),double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
+                    
                     
                     if(first_conculate)
                     {

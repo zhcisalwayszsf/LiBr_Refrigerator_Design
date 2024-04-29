@@ -26,7 +26,7 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double K_in(double a0, double ai,  double r0,double ri, double d0, double di, double lambda)
         {
-            double Ki = 1 / (1 / ai + ri * Math.Pow(10, -4) + di / 2 /lambda * Math.Log(d0 / di) + (r0 * Math.Pow(10, -4) + 1 / a0) * (di / d0));
+            double Ki = 1d / (1d / ai + ri * Math.Pow(10d, -4d) + di / 2d /lambda * Math.Log(d0 / di) + (r0 * Math.Pow(10d, -4d) + 1d / a0) * (di / d0));
             return Ki;
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double K_out(double a0, double ai,  double r0, double ri, double d0, double di,double lambda)
         {
-            double Ko = 1 / ((1 / ai + ri*Math.Pow(10,-4)) * (d0 / di) + d0 / 2 / lambda * Math.Log(d0 / di) + r0 * Math.Pow(10, -4) + 1 / a0);
+            double Ko = 1d / ((1d / ai + ri*Math.Pow(10,-4)) * (d0 / di) + d0 / 2d / lambda * Math.Log(d0 / di) + r0 * Math.Pow(10, -4) + 1d / a0);
             return Ko;
         }
 
@@ -52,16 +52,32 @@ namespace LiBr_Refrigerator_Design
         /// <param name="ki">管内</param>
         /// <param name="k0">管外</param>
         /// <returns></returns>
-        public double average_K(double ki, double k0, double d0, double di, double lambda)
+        public double average_K(double ki, double k0, double d0, double di, double lambda,int index)
         {
-            double K = 1/(1 / ki + 1 / k0 + (d0 - di) /2/ lambda);
-            return K;
+            double K;
+            switch (index)
+            {
+                case 0:
+                    K = k0;
+                    return K;
+                case 1:
+                    K = ki;
+                    return K;
+                case 2:
+                    K= (ki + k0) / 2;
+                    return K;
+                case 3:
+                    K = 1 / (1 / ki + 1 / k0 + (d0 - di) / 2 / lambda);
+                    return K;
+                default:
+                     K = k0;
+                    return K;
+            }
+            
+            
         }
-        public double average_K2(double ki, double k0)
-        {
-            double K = (ki+k0)/2;
-            return K;
-        }
+    
+        
 
         /// <summary>
         /// 所需管子数计算
@@ -86,7 +102,7 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double fluSpeed(double q_v,double n,double m,double di)
         {
-            double speed = q_v / (Math.PI * Math.Pow(di, 2) / 4 * (n / m));
+            double speed = q_v / (Math.PI * Math.Pow(di, 2d) / 4 * (n / m));
             return speed;
         }
 
@@ -212,11 +228,6 @@ namespace LiBr_Refrigerator_Design
         /// <param name="tk">冷凝温度</param>
         /// <param name="tw">管外表面平均温度</param>
         /// <returns></returns>
-        public double Condenser_a0(double sigma_g, double sigma_n, double r,double g, double pho_l, double mu_l, double lambda_l, double tk,double tw, double l)
-        {
-            double a0 = sigma_g * sigma_n * 0.725 * (1000*r * Math.Pow(pho_l, 2) * Math.Pow(lambda_l, 2) * g / mu_l / Math.Abs(tk - tw)/l);
-            return a0;
-        }
 
         /// <summary>
         /// 计算冷凝器的管外传热系数a0法2
@@ -232,7 +243,7 @@ namespace LiBr_Refrigerator_Design
         public double Condenser_a02(double r,double g, double pho,double mu,double lambda,double d0,double n)
         {
             double a0;
-            a0 = 1.13 * Math.Pow((Math.Pow(lambda, 2) * g * Math.Pow(pho, 2) * r * 1000) / (5.5 * d0*n * mu), 0.25);
+            a0 = 1.13 * Math.Pow((Math.Pow(lambda, 2) * g * Math.Pow(pho, 2) * r * 1000) / (5.5 * d0*n * mu), 1d/4d);
             return a0;
         }
 
@@ -250,7 +261,7 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double Condenser_a0(double r, double g,double pho_l, double mu_l, double lambda_l,double tk,double tw, double l)
         {
-            double a0= 0.8* 0.9 * 0.725 * (1000*r * Math.Pow(pho_l, 2) * Math.Pow(lambda_l, 3) * g / mu_l / Math.Abs(tk - tw)/l);
+            double a0= 0.9*0.725 * Math.Pow(1000 * r * Math.Pow(pho_l, 2) * Math.Pow(lambda_l, 3) * g / mu_l / Math.Abs(tk - tw) / l,1d/4d);
             return a0;
         }
 
@@ -351,7 +362,14 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double Evaporator_a0(double c,double pr,double omega,double L,double delta_x,double nu,double lambda)
         {
-            double a0 = c * Math.Pow(pr, 1 / 3) * lambda / delta_x * omega / 2 / L / nu;
+            double a0 = c * Math.Pow(pr, 1d / 3d) * lambda / delta_x * omega / 2 / L / nu;
+            return a0;
+        }
+        
+        public double Evaporator_a02(double omega,double t0,double d0)
+        {
+            
+            double a0 = 55*(1+0.016*t0)*Math.Pow(omega/d0,1d/3d);
             return a0;
         }
 

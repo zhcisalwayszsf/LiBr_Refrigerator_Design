@@ -55,6 +55,7 @@ namespace LiBr_Refrigerator_Design
         public EvaporatorForm()
         {
             InitializeComponent();
+            comboBox_k_model.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,10 +116,10 @@ namespace LiBr_Refrigerator_Design
                     a0 = myFunction.Evaporator_a0(C, Pr, omega, l, delta_x, nu, water_lambda);
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
-                    k = myFunction.average_K2(ki, k0);
+                    k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
+                   
 
-
-                    if(first_conculate)
+                    if (first_conculate)
                     {
                         textBox_result_k.Text = mess.ToString();
                         textBox_result_a.Text = a.ToString();

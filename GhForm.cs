@@ -55,6 +55,7 @@ namespace LiBr_Refrigerator_Design
         public GhForm()
         {
             InitializeComponent();
+            comboBox_k_model.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,8 +116,8 @@ namespace LiBr_Refrigerator_Design
                     a0 = double.Parse(textBox_a0_input.Text);//a0查表
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
-                    k = myFunction.average_K2(ki, k0);
-
+                    k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
+                    
 
                     if (first_conculate)
                     {
