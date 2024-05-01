@@ -188,6 +188,141 @@ namespace LiBr_Refrigerator_Design
 
 
         /// <summary>
+        /// 溴化锂水溶液的定压比热容
+        /// </summary>
+        /// <param name="t">温度</param>
+        /// <param name="x">溴化锂质量分数0-100</param>
+        /// <returns></returns>
+        public double LiBr_Cp(double t,double x)
+        {
+            double[] A = new double[3], B = new double[3], C = new double[3];
+            double Cp=0;
+            A[0] = 0.9928285; 
+            A[1] = -1.3169179;
+            A[2] = 0.6481006;
+            B[0] = -3.18742E-5;
+            B[1] = 2.9856E-3;
+            B[2] = -4.0198E-3;
+            C[0] = -3.0105E-6;
+            C[1] = -1.7172E-6;
+            C[2] = 8.3641E-6;
+            for(int i=0; i<3;)
+            {
+                Cp += (A[i]+B[i]*t+C[i]*t*t)*Math.Pow(x/100d,i)*4.1868;
+                i++;
+            }
+            return Cp;
+        }
+
+        /// <summary>
+        ///溴化锂水溶液的动力粘度
+        /// </summary>
+        /// <param name="t">温度</param>
+        /// <param name="x">溴化锂质量分数0-100</param>
+        /// <returns></returns>
+        public double LiBr_mu1(double t,double x)
+        {
+            double[] A = new double[4], B = new double[4], C = new double[4];
+            double a=0, b=0, c = 0;
+            double mu;
+            A[0] = 1.704152;
+            A[1] = 0.1084067;
+            A[2] = -2.735067E-3;
+            A[3] = -5.649458E-5;
+            B[0] = -5.783394E-2;
+            B[1] = 4.951459E-4;
+            B[2] = 7.123706E-5;
+            B[3] = -1.907971E-6;
+            C[0] = -1.105483E-4;
+            C[1] = 5.288185E-6;
+            C[2] = -2.111622E-7;
+            C[3] = 8.204797E-9;
+            for (int i=0; i<4;)
+            {
+                a += A[i] *Math.Pow(x,i);
+                b += B[i] * Math.Pow(x, i);
+                c += C[i] * Math.Pow(x, i);
+                i++;
+            }
+            mu=a+b+c*t*t;
+            return mu*1E-3;
+        }
+        
+        public double LiBr_mu2(double t, double x)
+        {
+            double mu = 0;
+            double a=0, b = 0, c = 0, d = 0, e = 0;
+            double[] A = new double[5], B = new double[5], C = new double[5], D = new double[5], E = new double[5];
+            x = x / 100;
+            A[0] = 280.29786;
+            A[1] = -2467.1035;
+            A[2] = 8236.95712;
+            A[3] = -12295.1512;
+            A[4] = 6987.19159;
+            B[0] = -10.2359;
+            B[1] = 88.18418;
+            B[2] = -287.0873;
+            B[3] = 417.76558;
+            B[4] = -231.05258;
+            C[0] = 0.168663;
+            C[1] = -1.414004;
+            C[2] = 4.464344;
+            C[3] = -6.291157;
+            C[4] = 3.366537;
+            D[0] = -1.28817E-3;
+            D[1] = 1.05791E-2;
+            D[2] = -3.25918E-2;
+            D[3] = 4.46873E-2;
+            D[4] = -2.32197E-2;
+            E[0] = 3.76484E-6;
+            E[1] = -3.04581E-5;
+            E[2] = 9.20812E-5;
+            E[3] = -1.23458E-4;
+            E[4] = 6.25342E-5;
+            for (int i=0;i<5;)
+            {
+                a += A[i]*Math.Pow(x,i);
+                b += B[i] * Math.Pow(x, i);
+                c += C[i] * Math.Pow(x, i);
+                d += D[i] * Math.Pow(x, i);
+                e += E[i] * Math.Pow(x, i);
+                i++;
+            }
+
+            mu = a+b*t+c*Math.Pow(t,2)+d* Math.Pow(t, 3)+e* Math.Pow(t, 4);
+            return mu;
+        }
+        
+            public double Libr_Lambda(double t,double x)
+        {
+            double a0, a1, a2, a3, a4, a5, a6;
+            a0 = 0.5218988;
+            a1 = 1.412948E-3;
+            a2 = -6.741987E-6;
+            a3 = 1.729977E-8;
+            a4 = -5.514559E-3;
+            a5 = 7.640728E-5;
+            a6 = -6.098338E-7;
+            double lambda = 1.163 * (a0 + a1 * t + a2 * Math.Pow(t, 2) + a3 * Math.Pow(t, 3) + a4 * x + a5 * Math.Pow(x, 2) + a6 * Math.Pow(x, 3));
+            return lambda;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
         /// 冷凝器传热面积计算
         /// </summary>
         /// <param name="q">冷凝器热负荷</param>
@@ -462,10 +597,73 @@ namespace LiBr_Refrigerator_Design
         /// <returns></returns>
         public double EXH_Area(double q,double k,double t12, double t10, double t9, double t2, double tw)
         {
-            double a = 1000 * q / k / (t12 - t2 - 0.5 * (t10 - tw) - (t9 - t2));
+            double a = 1000 * q / k / (t12 - t2 - 0.35 * (t10 - tw) - 0.65*(t9 - t2));
             return a;
         }
-        
+        /// <summary>
+        /// 低温热交换器传热面积
+        /// </summary>
+        /// <param name="q"></param>
+        /// <param name="k"></param>
+        /// <param name="t4"></param>
+        /// <param name="t7"></param>
+        /// <param name="t8"></param>
+        /// <param name="t2"></param>
+        /// <returns></returns>
+        public double EXL_Area(double q, double k, double t4, double t7, double t8, double t2)
+        {
+            double a = 1000 * q / k / (t4 - t2 - 0.35 * (t7 - t2) - 0.65 * (t4 - t8));
+            return a;
+        }
+        /// <summary>
+        /// 溴化锂管外传热系数（三角叉排）
+        /// </summary>
+        /// <param name="lambda">流体热导率</param>
+        /// <param name="mu">流体粘性系数</param>
+        /// <param name="Pr">普朗特数</param>
+        /// <param name="phi">折流板缺口与壳体截面积之比，自定</param>
+        /// <param name="omega">流体的质量流速[kg/(m^2·s)]</param>
+        /// <param name="d0"></param>
+        /// <returns></returns>
+        public double EX_a0(double lambda,double mu,double Pr,double phi,double omega,double d0)
+        {
+            
+            double a = 0.33 * phi * lambda / d0 * Math.Pow(omega * d0 / mu, 0.6) * Math.Pow(Pr, 0.33);
+            return a;
+        }
+        /// <summary>
+        /// 流体质量流速计算
+        /// </summary>
+        /// <param name="G">壳侧流体流量(kg/s)</param>
+        /// <param name="s1">端部折流板间距</param>
+        /// <param name="s">中间折流板间距</param>
+        /// <param name="Nb">折流板数目</param>
+        /// <param name="Di">壳内径</param>
+        /// <param name="d0">管外径</param>
+        /// <param name="n3">壳体中心线（或中心线附近）处直径上的管子数目</param>
+        /// <param name="n4">折流板缺口面积中的管子数目</param>
+        /// <param name="phi">折流板缺口与壳体截面积之比</param>
+        /// <returns></returns>
+        public double EX_Omega(double G,double s1,double s,double Nb,double Di,double d0,double n3 ,double n4, double phi)
+        {
+            double Ae,Ac2,Ab,Ace,Ac,omega;
+            Ace = s1 * (Di-n3*d0);//端部折流板间的流通截面积
+            Ac = s  * (Di - n3 * d0);//中部折流板间的流通截面积
+            Ac2 = (2 * s1 * Ace + s * Ac * (Nb - 1)) / (2 * s1 + s * (Nb - 1));
+            Ab = phi * Di - n4 * d0 * d0 * Math.PI / 4d;
+            Ae = Math.Pow(Ac2*Ab,0.5d);
+            omega=G/Ae;
+            return omega;
+        }
 
+        public double EXW_Area(double q, double k, double ts2, double ts1,double t7, double t72)
+        {
+            double a = q / k / (ts2-t7-0.35*(t72-t7)-0.65*(ts1-ts2));
+            return a;
+        }
+
+
+
+        
     }
 }

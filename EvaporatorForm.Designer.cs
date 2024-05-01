@@ -353,7 +353,7 @@
             this.textBox_tube_length.Name = "textBox_tube_length";
             this.textBox_tube_length.Size = new System.Drawing.Size(75, 25);
             this.textBox_tube_length.TabIndex = 17;
-            this.textBox_tube_length.Text = "5";
+            this.textBox_tube_length.Text = "6";
             this.textBox_tube_length.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label6

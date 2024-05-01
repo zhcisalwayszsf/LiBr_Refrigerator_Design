@@ -46,5 +46,23 @@ namespace LiBr_Refrigerator_Design
             Form A_Gl = new GlForm();
             A_Gl.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form A_EXH = new EXHForm();
+            A_EXH.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form A_EXL = new EXLForm();
+            A_EXL.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form A_LiBr = new LiBrForm();
+            A_LiBr.ShowDialog();
+        }
     }
 }

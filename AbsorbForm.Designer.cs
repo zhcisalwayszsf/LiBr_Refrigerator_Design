@@ -84,6 +84,8 @@
             this.label_di = new System.Windows.Forms.Label();
             this.textBox_d0 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.comboBox_k_model = new System.Windows.Forms.ComboBox();
             this.textBox_t2 = new System.Windows.Forms.TextBox();
@@ -474,7 +476,7 @@
             this.textBox_tube_length.Name = "textBox_tube_length";
             this.textBox_tube_length.Size = new System.Drawing.Size(75, 25);
             this.textBox_tube_length.TabIndex = 17;
-            this.textBox_tube_length.Text = "5";
+            this.textBox_tube_length.Text = "6";
             this.textBox_tube_length.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // panel2
@@ -616,6 +618,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.comboBox_k_model);
             this.panel1.Controls.Add(this.textBox_t2);
@@ -655,6 +659,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(751, 466);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(240, 419);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(75, 25);
+            this.textBox1.TabIndex = 44;
+            this.textBox1.Text = "33";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(30, 422);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 15);
+            this.label17.TabIndex = 43;
+            this.label17.Text = "第一排管束数：";
             // 
             // label29
             // 
@@ -872,5 +893,7 @@
         private System.Windows.Forms.TextBox textBox_a0;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboBox_k_model;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
     }
 }

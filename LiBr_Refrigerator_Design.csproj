@@ -64,6 +64,12 @@
     <Compile Include="EXHForm.Designer.cs">
       <DependentUpon>EXHForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EXLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXLForm.Designer.cs">
+      <DependentUpon>EXLForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Function.cs" />
     <Compile Include="CondenserForm.cs">
       <SubType>Form</SubType>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="GlForm.Designer.cs">
       <DependentUpon>GlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiBrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiBrForm.Designer.cs">
+      <DependentUpon>LiBrForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -103,11 +115,17 @@
     <EmbeddedResource Include="EXHForm.resx">
       <DependentUpon>EXHForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EXLForm.resx">
+      <DependentUpon>EXLForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GhForm.resx">
       <DependentUpon>GhForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlForm.resx">
       <DependentUpon>GlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiBrForm.resx">
+      <DependentUpon>LiBrForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

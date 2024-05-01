@@ -37,11 +37,13 @@
             this.button_Evaporator = new System.Windows.Forms.Button();
             this.button_absorb = new System.Windows.Forms.Button();
             this.button_condenser = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button1);
@@ -73,6 +75,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "低温换热器";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -82,6 +85,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "高温换热器";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -133,6 +137,16 @@
             this.button_condenser.UseVisualStyleBackColor = true;
             this.button_condenser.Click += new System.EventHandler(this.button_condenser_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(515, 290);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 60);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "LiBr物性参数";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
     }
 }

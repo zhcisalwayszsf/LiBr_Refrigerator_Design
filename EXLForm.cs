@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +10,14 @@ using System.Windows.Forms;
 
 namespace LiBr_Refrigerator_Design
 {
-    public partial class AbsorbForm : Form
+    public partial class EXLForm : Form
     {
-
-        //确保输入
+        Function myFunction = new Function();
+        public EXLForm()
+        {
+            InitializeComponent();
+            comboBox_k_model.SelectedIndex = 0;
+        }
         private void NoInputMessage()
         {
             string Message = "请输入完整数据";
@@ -52,67 +55,73 @@ namespace LiBr_Refrigerator_Design
             }
         }
 
-
-        Function myFunction = new Function();
-
-        public AbsorbForm()
-        {
-            InitializeComponent();
-            comboBox_k_model.SelectedIndex = 0;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox_d0.Text == string.Empty |
-                textBox_di.Text ==string.Empty |
-                textBox_r0.Text == string.Empty |
-                textBox_ri.Text == string.Empty|
-                textBox_tw.Text == string.Empty | 
-                textBox_tw1.Text == string.Empty|
-                textBox_t9.Text == string.Empty | 
-                textBox_t2.Text == string.Empty|
-                textBox_xi.Text == string.Empty | 
-                textBox_gamma.Text == string.Empty|
-                textBox_tube_lambda.Text == string.Empty | 
-                textBox_t_inTube.Text == string.Empty|
-                textBox_absorb_q.Text == string.Empty | 
-                textBox_flu_qv.Text == string.Empty|
-                textBox_tube_length.Text == string.Empty| 
-                textBox_m.Text == string.Empty|
-                textBox_first_K.Text ==string.Empty|
-                textBox_middle.Text == string.Empty)
+               textBox_di.Text == string.Empty |
+               textBox_r0.Text == string.Empty |
+               textBox_ri.Text == string.Empty |
+               textBox_t7.Text == string.Empty |
+               textBox_t4.Text == string.Empty |
+               textBox_t2.Text == string.Empty |
+               textBox_tw.Text == string.Empty |
+               textBox_t8.Text == string.Empty |
+               textBox_Pr.Text == string.Empty |
+               textBox_phi.Text == string.Empty |
+               textBox_tube_lambda.Text == string.Empty |
+               textBox_gh_q.Text == string.Empty |
+               textBox_flu_qv.Text == string.Empty |
+               textBox_G.Text == string.Empty |
+               textBox_tube_length.Text == string.Empty |
+               textBox_lambda.Text == string.Empty |
+               textBox_mu.Text == string.Empty |
+               textBox_m.Text == string.Empty |
+               textBox_n3.Text == string.Empty |
+               textBox_n4.Text == string.Empty |
+               textBox_s.Text == string.Empty |
+               textBox_s1.Text == string.Empty |
+               textBox_const_Di.Text == string.Empty)
             {
                 NoInputMessage();
             }
             else
             {
                 bool first_conculate = true;
-                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, tw, tw1, t9, t2, m, flu_qv, t_inTube, q_a, tube_lambda, xi, gamma;
+                double mess = double.Parse(textBox_first_K.Text);
+                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t7, t8, t2, t4, m, flu_qv, G, Di, phi, q_exh, tube_lambda, mu, lambda, Pr, n3, n4, Nb, s1, s;
                 d0 = double.Parse(textBox_d0.Text);
                 di = double.Parse(textBox_di.Text);
                 r0 = double.Parse(textBox_r0.Text);
                 ri = double.Parse(textBox_ri.Text);
-                tw = double.Parse(textBox_tw.Text);
-                tw1 = double.Parse(textBox_tw1.Text);
-                t9 = double.Parse(textBox_t9.Text);
+                t7 = double.Parse(textBox_t7.Text);
+                t8 = double.Parse(textBox_t8.Text);
                 t2 = double.Parse(textBox_t2.Text);
-                xi = double.Parse(textBox_xi.Text);
-                gamma = double.Parse(textBox_gamma.Text);
+                t4 = double.Parse(textBox_t4.Text);
+                Pr = double.Parse(textBox_Pr.Text);
                 tube_lambda = double.Parse(textBox_tube_lambda.Text);
-                t_inTube = double.Parse(textBox_t_inTube.Text);
-                q_a = double.Parse(textBox_absorb_q.Text);
+                phi = double.Parse(textBox_phi.Text);
+                q_exh = double.Parse(textBox_gh_q.Text);
                 flu_qv = double.Parse(textBox_flu_qv.Text);
+                G = double.Parse(textBox_G.Text);
                 l = double.Parse(textBox_tube_length.Text);
                 m = double.Parse(textBox_m.Text);
-                double mess = double.Parse(textBox_first_K.Text);
+                mu = double.Parse(textBox_mu.Text); ;
+                lambda = double.Parse(textBox_lambda.Text);
+                n3 = double.Parse(textBox_n3.Text);
+                n4 = double.Parse(textBox_n4.Text);
+                Nb = double.Parse(textBox_Nb.Text);
+                s = double.Parse(textBox_s.Text);
+                s1 = double.Parse(textBox_s1.Text);
+                Di = double.Parse(textBox_const_Di.Text);
 
                 for (int i = 1000; i > 0; i--)
                 {
-                    a = myFunction.Absorb_Area(q_a, mess, tw1, tw, t9, t2);
+                    a = myFunction.EXL_Area(q_exh, mess,t4,t7,t8,t2);
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
-                    ai = myFunction.Absorb_ai(speed, di, t_inTube);
-                    a0 = myFunction.Absorb_a0(xi, gamma);
+                    ai = double.Parse(textBox_ai_input.Text);//ai查表
+                    double omega = myFunction.EX_Omega(G, s1, s, Nb, Di, d0, n3, n4, phi);
+                    a0 = myFunction.EX_a0(lambda, mu, Pr, phi, omega, d0);
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
                     k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
@@ -127,10 +136,9 @@ namespace LiBr_Refrigerator_Design
                         textBox_result_ai.Text = ai.ToString();
                         first_conculate = false;
                     }
-
                     if (Math.Abs(mess - k) > Math.Abs(double.Parse(textBox_middle.Text)))
                     {
-                        Console.WriteLine("a:" + a + "     n:" + n + "      speed:" + speed + "    ai:" + ai + "     a0:" + a0 + "    ki:" + ki + "     k0:" + k0 + "     k:" + k);
+
                         mess = k;
                     }
                     else
@@ -139,17 +147,16 @@ namespace LiBr_Refrigerator_Design
                         textBox_a.Text = a.ToString();
                         textBox_v.Text = speed.ToString();
                         textBox_n.Text = n.ToString();
-                        textBox_ai.Text = ai.ToString();
                         textBox_a0.Text = a0.ToString();
+                        textBox_ai.Text = ai.ToString();
                         if (!first_conculate)
                         {
                             first_conculate = true;
                         }
-                        break;                   
+                        break;
                     }
                 }
-            
             }
-        }
+            }
     }
 }

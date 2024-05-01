@@ -14,3 +14,5 @@ G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.Evapora
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.GhForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.GlForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EXHForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EXLForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.LiBrForm.resources
