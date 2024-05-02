@@ -10,37 +10,42 @@ using System.Windows.Forms;
 
 namespace LiBr_Refrigerator_Design
 {
-    public partial class LiBrForm : Form
+    public partial class KForm : Form
     {
         Function myFunction = new Function();
-        public LiBrForm()
+        public KForm()
         {
             InitializeComponent();
+            comboBox_k_model.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox_t.Text == string.Empty |
-                textBox_x.Text == string.Empty
+            if (textBox_a0.Text == string.Empty |
+                textBox_ai.Text == string.Empty |
+                textBox_lambda.Text == string.Empty
                 )
             {
                 NoInputMessage();
             }
             else
             {
+                double ki, k0;
+                double ri, r0, ai, a0, lambda,d0,di;
+                ri = double.Parse(textBox_ri.Text);
+                r0 = double.Parse(textBox_r0.Text);
+                ai = double.Parse(textBox_ai.Text);
+                a0 = double.Parse(textBox_a0.Text);
+                di = double.Parse(textBox_di.Text);
+                d0 = double.Parse(textBox_d0.Text);
+                lambda = double.Parse(textBox_lambda.Text);
 
-                double Pr, mu, lambda, Cp, t, x;
-                t = double.Parse(textBox_t.Text);
-                x = double.Parse(textBox_x.Text);
-                mu = myFunction.LiBr_mu2(t, x);
-                Cp = myFunction.LiBr_Cp(t, x);
-                lambda = myFunction.Libr_Lambda(t, x);
-                Pr = Cp * mu / lambda;
-                textBox_cp.Text = Cp.ToString();
-                textBox_lambda.Text = lambda.ToString();
-                textBox_mu.Text = mu.ToString();
-                textBox_Pr.Text = Pr.ToString();
-
+                ki = myFunction.K_in(a0,ai,r0,ri,d0,di,lambda);
+                k0 = myFunction.K_out(a0, ai, r0, ri, d0, di,lambda);
+                
+                textBox_k.Text = myFunction.average_K(ki,k0,d0,di,lambda,comboBox_k_model.SelectedIndex).ToString();
+                        
+                
             }
         }
 

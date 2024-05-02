@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,12 +38,13 @@
             this.button_Evaporator = new System.Windows.Forms.Button();
             this.button_absorb = new System.Windows.Forms.Button();
             this.button_condenser = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -55,8 +57,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 433);
+            this.panel1.Size = new System.Drawing.Size(702, 473);
             this.panel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(515, 290);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 60);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "LiBr物性参数";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -137,22 +149,22 @@
             this.button_condenser.UseVisualStyleBackColor = true;
             this.button_condenser.Click += new System.EventHandler(this.button_condenser_Click);
             // 
-            // button6
+            // button7
             // 
-            this.button6.Location = new System.Drawing.Point(515, 290);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 60);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "LiBr物性参数";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.Location = new System.Drawing.Point(85, 400);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 60);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "K值手动计算";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(702, 433);
+            this.ClientSize = new System.Drawing.Size(702, 473);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "mainForm";
@@ -175,5 +187,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

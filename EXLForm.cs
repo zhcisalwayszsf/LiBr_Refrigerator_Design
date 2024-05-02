@@ -55,8 +55,8 @@ namespace LiBr_Refrigerator_Design
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       private void button1_Click(object sender, EventArgs e)
+        {/*
             if (textBox_d0.Text == string.Empty |
                textBox_di.Text == string.Empty |
                textBox_r0.Text == string.Empty |
@@ -120,8 +120,8 @@ namespace LiBr_Refrigerator_Design
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
                     ai = double.Parse(textBox_ai_input.Text);//ai查表
-                    double omega = myFunction.EX_Omega(G, s1, s, Nb, Di, d0, n3, n4, phi);
-                    a0 = myFunction.EX_a0(lambda, mu, Pr, phi, omega, d0);
+                    //double omega = myFunction.EX_Omega(G, s1, s, Nb, Di, d0, n3, n4, phi);
+                   // a0 = myFunction.EX_a0(lambda, mu, Pr, phi, omega, d0);
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
                     k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
@@ -156,7 +156,7 @@ namespace LiBr_Refrigerator_Design
                         break;
                     }
                 }
-            }
+            }*/
             }
     }
 }

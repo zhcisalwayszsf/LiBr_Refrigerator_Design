@@ -89,6 +89,12 @@
     <Compile Include="GlForm.Designer.cs">
       <DependentUpon>GlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KForm.Designer.cs">
+      <DependentUpon>KForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiBrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GlForm.resx">
       <DependentUpon>GlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KForm.resx">
+      <DependentUpon>KForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiBrForm.resx">
       <DependentUpon>LiBrForm.cs</DependentUpon>

@@ -64,5 +64,11 @@ namespace LiBr_Refrigerator_Design
             Form A_LiBr = new LiBrForm();
             A_LiBr.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form A_K_conculator = new KForm();
+            A_K_conculator.ShowDialog();
+        }
     }
 }

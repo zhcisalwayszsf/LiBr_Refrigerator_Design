@@ -130,6 +130,7 @@
             this.textBox_n3.Size = new System.Drawing.Size(75, 25);
             this.textBox_n3.TabIndex = 39;
             this.textBox_n3.Text = "95.1";
+            this.textBox_n3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label30
             // 
@@ -147,6 +148,7 @@
             this.textBox_s.Size = new System.Drawing.Size(75, 25);
             this.textBox_s.TabIndex = 45;
             this.textBox_s.Text = "1.26";
+            this.textBox_s.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label31
             // 
@@ -164,6 +166,7 @@
             this.textBox_s1.Size = new System.Drawing.Size(75, 25);
             this.textBox_s1.TabIndex = 43;
             this.textBox_s1.Text = "2";
+            this.textBox_s1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label32
             // 
@@ -181,6 +184,7 @@
             this.textBox_mu.Size = new System.Drawing.Size(75, 25);
             this.textBox_mu.TabIndex = 41;
             this.textBox_mu.Text = "5";
+            this.textBox_mu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label33
             // 
@@ -232,6 +236,7 @@
             this.textBox_const_Di.Size = new System.Drawing.Size(75, 25);
             this.textBox_const_Di.TabIndex = 73;
             this.textBox_const_Di.Text = "600";
+            this.textBox_const_Di.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // textBox_n4
             // 
@@ -240,6 +245,7 @@
             this.textBox_n4.Size = new System.Drawing.Size(75, 25);
             this.textBox_n4.TabIndex = 53;
             this.textBox_n4.Text = "992";
+            this.textBox_n4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label27
             // 
@@ -257,6 +263,7 @@
             this.textBox_tw.Size = new System.Drawing.Size(75, 25);
             this.textBox_tw.TabIndex = 49;
             this.textBox_tw.Text = "45";
+            this.textBox_tw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label29
             // 
@@ -274,6 +281,7 @@
             this.textBox_Nb.Size = new System.Drawing.Size(75, 25);
             this.textBox_Nb.TabIndex = 47;
             this.textBox_Nb.Text = "15";
+            this.textBox_Nb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label24
             // 
@@ -381,6 +389,7 @@
             this.textBox_G.Size = new System.Drawing.Size(75, 25);
             this.textBox_G.TabIndex = 71;
             this.textBox_G.Text = "1.26";
+            this.textBox_G.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label37
             // 
@@ -420,6 +429,7 @@
             this.textBox_ai_input.Size = new System.Drawing.Size(75, 25);
             this.textBox_ai_input.TabIndex = 67;
             this.textBox_ai_input.Text = "9000";
+            this.textBox_ai_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label36
             // 
@@ -446,6 +456,7 @@
             this.textBox_t7.Size = new System.Drawing.Size(75, 25);
             this.textBox_t7.TabIndex = 37;
             this.textBox_t7.Text = "992";
+            this.textBox_t7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label17
             // 
@@ -463,6 +474,7 @@
             this.textBox_Pr.Size = new System.Drawing.Size(75, 25);
             this.textBox_Pr.TabIndex = 35;
             this.textBox_Pr.Text = "0.04299";
+            this.textBox_Pr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label16
             // 
@@ -480,6 +492,7 @@
             this.textBox_lambda.Size = new System.Drawing.Size(75, 25);
             this.textBox_lambda.TabIndex = 33;
             this.textBox_lambda.Text = "0.043";
+            this.textBox_lambda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label15
             // 
@@ -497,6 +510,7 @@
             this.textBox_ri.Size = new System.Drawing.Size(75, 25);
             this.textBox_ri.TabIndex = 31;
             this.textBox_ri.Text = "0.9";
+            this.textBox_ri.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label10
             // 
@@ -514,6 +528,7 @@
             this.textBox_r0.Size = new System.Drawing.Size(75, 25);
             this.textBox_r0.TabIndex = 29;
             this.textBox_r0.Text = "2";
+            this.textBox_r0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label14
             // 
@@ -531,6 +546,7 @@
             this.textBox_tube_lambda.Size = new System.Drawing.Size(75, 25);
             this.textBox_tube_lambda.TabIndex = 27;
             this.textBox_tube_lambda.Text = "15";
+            this.textBox_tube_lambda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label11
             // 
@@ -548,6 +564,7 @@
             this.textBox_phi.Size = new System.Drawing.Size(75, 25);
             this.textBox_phi.TabIndex = 23;
             this.textBox_phi.Text = "900";
+            this.textBox_phi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label9
             // 
@@ -565,6 +582,7 @@
             this.textBox_flu_qv.Size = new System.Drawing.Size(75, 25);
             this.textBox_flu_qv.TabIndex = 21;
             this.textBox_flu_qv.Text = "1.26";
+            this.textBox_flu_qv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label8
             // 
@@ -582,6 +600,7 @@
             this.textBox_m.Size = new System.Drawing.Size(75, 25);
             this.textBox_m.TabIndex = 19;
             this.textBox_m.Text = "2";
+            this.textBox_m.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label7
             // 
@@ -599,6 +618,7 @@
             this.textBox_tube_length.Size = new System.Drawing.Size(75, 25);
             this.textBox_tube_length.TabIndex = 17;
             this.textBox_tube_length.Text = "3";
+            this.textBox_tube_length.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label6
             // 
@@ -616,6 +636,7 @@
             this.textBox_gh_q.Size = new System.Drawing.Size(75, 25);
             this.textBox_gh_q.TabIndex = 15;
             this.textBox_gh_q.Text = "2618.2";
+            this.textBox_gh_q.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label3
             // 
@@ -633,6 +654,7 @@
             this.textBox_t8.Size = new System.Drawing.Size(75, 25);
             this.textBox_t8.TabIndex = 13;
             this.textBox_t8.Text = "92.6";
+            this.textBox_t8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label2
             // 
@@ -650,6 +672,7 @@
             this.textBox_t4.Size = new System.Drawing.Size(75, 25);
             this.textBox_t4.TabIndex = 11;
             this.textBox_t4.Text = "41";
+            this.textBox_t4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label1
             // 
@@ -667,6 +690,7 @@
             this.textBox_t2.Size = new System.Drawing.Size(75, 25);
             this.textBox_t2.TabIndex = 5;
             this.textBox_t2.Text = "95.1";
+            this.textBox_t2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label_r0_out
             // 
@@ -684,6 +708,7 @@
             this.textBox_di.Size = new System.Drawing.Size(75, 25);
             this.textBox_di.TabIndex = 3;
             this.textBox_di.Text = "0.017";
+            this.textBox_di.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label_di
             // 
@@ -701,6 +726,7 @@
             this.textBox_d0.Size = new System.Drawing.Size(75, 25);
             this.textBox_d0.TabIndex = 1;
             this.textBox_d0.Text = "0.019";
+            this.textBox_d0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label_d0
             // 
@@ -864,6 +890,7 @@
             this.textBox_middle.Size = new System.Drawing.Size(107, 25);
             this.textBox_middle.TabIndex = 5;
             this.textBox_middle.Text = "0.1";
+            this.textBox_middle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label4
             // 
@@ -881,6 +908,7 @@
             this.textBox_first_K.Size = new System.Drawing.Size(107, 25);
             this.textBox_first_K.TabIndex = 3;
             this.textBox_first_K.Text = "3600";
+            this.textBox_first_K.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label5
             // 

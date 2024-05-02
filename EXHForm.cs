@@ -14,6 +14,7 @@ namespace LiBr_Refrigerator_Design
     {
 
         Function myFunction = new Function();
+        bool inputBool =false;
         public EXHForm()
         {
             InitializeComponent();
@@ -55,41 +56,72 @@ namespace LiBr_Refrigerator_Design
                 }
             }
         }
+       
+        public void inputCheck()
+        {
+            
+            foreach (Control control in panel1.Controls)
+            {
+                //遍历所有TextBox...
+
+                if(control is TextBox&& control.Tag != null)
+                {
+
+                    if (control.Tag.ToString() == "input")
+                    {
+                        
+                        if (control.Text == string.Empty)
+                        {
+                            inputBool = true;
+                        }
+                    }
+                    
+                }
+
+            }
+            foreach (Control control in panel3.Controls)
+            {
+                //遍历所有TextBox...
+
+                if (control is TextBox && control.Tag != null)
+                {
+
+                    if (control.Tag.ToString() == "input")
+                    {
+                       
+                        if (control.Text == string.Empty)
+                        {
+                            inputBool = true;
+                        }
+                    }
+
+                }
+
+            }
+
+
+
+        }
+    
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if( textBox_d0.Text == string.Empty|
-                textBox_di.Text == string.Empty|
-                textBox_r0.Text == string.Empty|
-                textBox_ri.Text == string.Empty|
-                textBox_t10.Text == string.Empty |
-                textBox_t12.Text == string.Empty |
-                textBox_t2.Text == string.Empty |
-                textBox_tw.Text == string.Empty |
-                textBox_t9.Text == string.Empty |
-                textBox_Pr.Text == string.Empty |
-                textBox_phi.Text == string.Empty |
-                textBox_tube_lambda.Text == string.Empty |
-                textBox_gh_q.Text == string.Empty |
-                textBox_flu_qv.Text == string.Empty |
-                textBox_G.Text == string.Empty |
-                textBox_tube_length.Text == string.Empty |
-                textBox_lambda.Text == string.Empty |
-                textBox_mu.Text == string.Empty |
-                textBox_m.Text == string.Empty |
-                textBox_n3.Text == string.Empty |
-                textBox_n4.Text == string.Empty |
-                textBox_s.Text == string.Empty |
-                textBox_s1.Text == string.Empty |
-                textBox_const_Di.Text == string.Empty)
+
+            inputCheck();
+            if (inputBool)
             {
+                
                 NoInputMessage();
+                inputBool = false;
             }
             else
             {
+                //先按假定的传热系数和管子数迭代到充分管子数，再从充分的管子数开始迭代到正确的传热系数
                 bool first_conculate = true;
                 double mess = double.Parse(textBox_first_K.Text);
-                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t10, t12, t2,tw,t9, m, flu_qv,G,Di, phi, q_exh, tube_lambda, mu, lambda, Pr,n3,n4,Nb,s1,s;
+                double mess_n = double.Parse(textBox_nt.Text);
+                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t10, t12, t2, tw, t9, m, flu_qv, G, Di, phi, q_exh, tube_lambda, mu_xi, mu_nong, lambda_xi, lambda_nong, Pr_xi, Pr_nong, h, Nb, ls, s, Cp_xi, Cp_nong, x_xi, x_nong, b3;
+
                 d0 = double.Parse(textBox_d0.Text);
                 di = double.Parse(textBox_di.Text);
                 r0 = double.Parse(textBox_r0.Text);
@@ -99,7 +131,6 @@ namespace LiBr_Refrigerator_Design
                 t2 = double.Parse(textBox_t2.Text);
                 tw = double.Parse(textBox_tw.Text);
                 t9 = double.Parse(textBox_t9.Text);
-                Pr = double.Parse(textBox_Pr.Text);
                 tube_lambda = double.Parse(textBox_tube_lambda.Text);
                 phi = double.Parse(textBox_phi.Text);
                 q_exh = double.Parse(textBox_gh_q.Text);
@@ -107,27 +138,56 @@ namespace LiBr_Refrigerator_Design
                 G = double.Parse(textBox_G.Text);
                 l = double.Parse(textBox_tube_length.Text);
                 m = double.Parse(textBox_m.Text);
-                mu = double.Parse(textBox_mu.Text); ;
-                lambda = double.Parse(textBox_lambda.Text);
-                n3 = double.Parse(textBox_n3.Text);
-                n4 = double.Parse(textBox_n4.Text);
+                h = double.Parse(textBox_h.Text);
                 Nb = double.Parse(textBox_Nb.Text);
                 s = double.Parse(textBox_s.Text);
-                s1 = double.Parse(textBox_s1.Text);
+                  ls = double.Parse(textBox_ls.Text);
                 Di = double.Parse(textBox_const_Di.Text);
+                x_xi = double.Parse(textBox_x_xi.Text);
+                x_nong = double.Parse(textBox_x_nong.Text);
+                b3 = double.Parse(textBox_b3.Text);
 
+                /*double Dl;
+                double theta;
+                double Fc;
+                double Awg;
+                double Awt;
+                double Ab;
+                double Ac;
+                double As;*/
+                double omega;
+                string[] names = new string[] { "D1", "theta", "Fc", "Awg", "Awt", "Ab", "Ac", "As" };
+
+                mu_nong = myFunction.LiBr_mu2((t12 + t10) / 2, x_nong * 100d);
+                mu_xi = myFunction.LiBr_mu2((t9 + t2) / 2, x_xi * 100d);
+                lambda_xi = myFunction.Libr_Lambda((t9 + t2) / 2, x_xi * 100d);
+                lambda_nong = myFunction.Libr_Lambda((t12 + t10) / 2, x_nong * 100d); ;
+                Cp_xi = myFunction.LiBr_Cp((t9 + t2) / 2, x_xi * 100d);
+                Cp_nong = myFunction.LiBr_Cp((t12 + t10) / 2, x_nong * 100d);
+                Pr_xi = Cp_xi * mu_xi / lambda_xi;
+                Pr_nong = Cp_nong * mu_nong / lambda_nong;
                 for (int i = 1000; i > 0; i--)
                 {
-                    a = myFunction.EXH_Area(q_exh,mess,t12,t10,t9,t2,tw);
+                    a = myFunction.EXH_Area(q_exh, mess, t12, t10, t9, t2, tw);
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
                     ai = double.Parse(textBox_ai_input.Text);//ai查表
-                    double omega = myFunction.EX_Omega(G,s1,s,Nb,Di,d0,n3,n4,phi);
-                    a0 = myFunction.EX_a0(lambda,mu,Pr,phi,omega,d0);
+                    double[] results = myFunction.EX_Conculator(G, h, b3, Di, d0, ls, s, mess_n);
+
+                    /* Dl =results[0] ;
+                     theta =results[1] ;
+                     Fc= results[2] ;
+                     Awg=results[3] ;
+                     Awt= results[4] ;
+                     Ab =  results[5];
+                     Ac =  results[6];
+                     As =  results[7];*/
+                    omega = results[8];
+                    a0 = myFunction.EX_a0(lambda_nong, mu_nong, Pr_nong, phi, omega, d0);
                     ki = myFunction.K_in(a0, ai, r0, ri, d0, di, tube_lambda);
                     k0 = myFunction.K_out(a0, ai, r0, ri, d0, di, tube_lambda);
                     k = myFunction.average_K(ki, k0, double.Parse(textBox_d0.Text), double.Parse(textBox_di.Text), double.Parse(textBox_tube_lambda.Text), comboBox_k_model.SelectedIndex);
-                  
+
                     if (first_conculate)
                     {
                         textBox_result_k.Text = mess.ToString();
@@ -138,28 +198,57 @@ namespace LiBr_Refrigerator_Design
                         textBox_result_ai.Text = ai.ToString();
                         first_conculate = false;
                     }
-                    if (Math.Abs(mess - k) > Math.Abs(double.Parse(textBox_middle.Text)))
+                    if (Math.Abs(mess_n - n) > Math.Abs(double.Parse(textBox_middle.Text)))
                     {
-                        
-                        mess = k;
+
+                        mess_n = n;
+
                     }
                     else
                     {
-                        textBox_k.Text = mess.ToString();
-                        textBox_a.Text = a.ToString();
-                        textBox_v.Text = speed.ToString();
-                        textBox_n.Text = n.ToString();
-                        textBox_a0.Text = a0.ToString();
-                        textBox_ai.Text = ai.ToString();
-                        if (!first_conculate)
+
+                        if (Math.Abs(mess - k) > Math.Abs(double.Parse(textBox_middle.Text)))
                         {
-                            first_conculate = true;
+                            mess = k;
                         }
-                        break;
+                        else
+                        {
+                            textBox_k.Text = k.ToString();
+                            textBox_a.Text = a.ToString();
+                            textBox_v.Text = speed.ToString();
+                            textBox_n.Text = mess_n.ToString();
+                            textBox_a0.Text = a0.ToString();
+                            textBox_ai.Text = ai.ToString();
+                            textBox_results.Text = null;
+                            for (int j = 0; j < results.Length - 1; j++)
+                            {
+                                textBox_results.Text += names[j] + "：" + results[j].ToString() + "\r\n";
+                            }
+                            textBox_omega.Text = omega.ToString();
+                            textBox_Pr.Text = Pr_nong.ToString();
+                            textBox_Pr2.Text = Pr_xi.ToString();
+                            textBox_Cp.Text = Cp_nong.ToString();
+                            textBox_Cp2.Text = Cp_xi.ToString();
+                            textBox_lambda.Text = lambda_nong.ToString();
+                            textBox_lambda2.Text = lambda_xi.ToString();
+                            textBox_mu.Text = mu_nong.ToString();
+                            textBox_mu2.Text = mu_xi.ToString();
+                            textBox_Dl.Text = results[0].ToString();
+                            textBox_Fc.Text = results[2].ToString();
+                            textBox_ang.Text = results[1].ToString();
+                            double r = Di / 2;
+                            textBox_phi.Text = ((r * r * (results[1] - Math.Sin(results[1])) / 2) / (Math.PI * r * r - (r * r * (results[1] - Math.Sin(results[1])) / 2))).ToString();
+                            if (!first_conculate)
+                            {
+                                first_conculate = true;
+                            }
+                            break;
+                        }
                     }
                 }
-
             }
+
+
         }
     }
 }

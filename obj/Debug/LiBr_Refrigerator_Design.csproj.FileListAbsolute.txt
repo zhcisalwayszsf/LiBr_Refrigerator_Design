@@ -16,3 +16,4 @@ G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.GlForm.
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EXHForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.EXLForm.resources
 G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.LiBrForm.resources
+G:\MyProgram\LiBr_Refrigerator_Design\obj\Debug\LiBr_Refrigerator_Design.KForm.resources

@@ -631,29 +631,46 @@ namespace LiBr_Refrigerator_Design
             double a = 0.33 * phi * lambda / d0 * Math.Pow(omega * d0 / mu, 0.6) * Math.Pow(Pr, 0.33);
             return a;
         }
+        
         /// <summary>
-        /// 流体质量流速计算
+        /// 返回数据数组
         /// </summary>
-        /// <param name="G">壳侧流体流量(kg/s)</param>
-        /// <param name="s1">端部折流板间距</param>
-        /// <param name="s">中间折流板间距</param>
-        /// <param name="Nb">折流板数目</param>
-        /// <param name="Di">壳内径</param>
+        /// <param name="G">壳程质量流量</param>
+        /// <param name="h">折流板缺口高度</param>
+        /// <param name="b3">一般0.008</param>
+        /// <param name="Di">筒内径</param>
         /// <param name="d0">管外径</param>
-        /// <param name="n3">壳体中心线（或中心线附近）处直径上的管子数目</param>
-        /// <param name="n4">折流板缺口面积中的管子数目</param>
-        /// <param name="phi">折流板缺口与壳体截面积之比</param>
+        /// <param name="ls">折流板间距</param>
+        /// <param name="s">管间距（三角）</param>
+        /// <param name="nt">管子数</param>
         /// <returns></returns>
-        public double EX_Omega(double G,double s1,double s,double Nb,double Di,double d0,double n3 ,double n4, double phi)
+        public double[] EX_Conculator(double G,double h,double b3,double Di,double d0 ,double ls, double s,double nt)
         {
-            double Ae,Ac2,Ab,Ace,Ac,omega;
-            Ace = s1 * (Di-n3*d0);//端部折流板间的流通截面积
-            Ac = s  * (Di - n3 * d0);//中部折流板间的流通截面积
-            Ac2 = (2 * s1 * Ace + s * Ac * (Nb - 1)) / (2 * s1 + s * (Nb - 1));
-            Ab = phi * Di - n4 * d0 * d0 * Math.PI / 4d;
-            Ae = Math.Pow(Ac2*Ab,0.5d);
-            omega=G/Ae;
-            return omega;
+            double Ac,Ab,As,Awt,Awg,theta,omega,Dl,Ds,Fc;
+            Dl = Di - 2 * b3;
+            Ds = Di;
+            theta = 2 * Math.Acos(1 - 2 * h / Ds);
+            Awg = Ds * Ds / 4 * (0.5d * theta - (1d - 2d * h / Ds) * Math.Sin(theta/2));
+            Fc = (Math.PI + 2 * ((Ds - 2 * h) / Dl) * Math.Sin(Math.Acos((Ds - 2 * h) / Ds)) - 2 * Math.Acos((Ds - 2 * h) / Dl)) / Math.PI;
+            Awt = Math.PI * d0 * d0 * nt * (1 - Fc)/8d;
+            Ab = Awg - Awt;
+            Ac = ls * (Ds - Dl + (Dl - d0) / s * (s - d0));
+            As = Math.Pow(Ab*Ac,2d);
+            omega = G / As;
+            
+            double[] results = new double[9];
+
+            results[0] = Dl;
+            results[1] = theta;
+            results[2] = Fc;
+            results[3] = Awg;
+            results[4] = Awt;
+            results[5] = Ab;
+            results[6] = Ac;
+            results[7] = As;
+            results[8] = omega;
+
+            return results;
         }
 
         public double EXW_Area(double q, double k, double ts2, double ts1,double t7, double t72)
@@ -662,7 +679,7 @@ namespace LiBr_Refrigerator_Design
             return a;
         }
 
-
+        
 
         
     }
