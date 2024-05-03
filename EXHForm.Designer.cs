@@ -83,6 +83,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox_nt = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -243,9 +244,9 @@
             this.panel4.Controls.Add(this.textBox_Pr);
             this.panel4.Controls.Add(this.textBox_mu);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 677);
+            this.panel4.Location = new System.Drawing.Point(3, 653);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1009, 240);
+            this.panel4.Size = new System.Drawing.Size(1009, 257);
             this.panel4.TabIndex = 3;
             // 
             // label56
@@ -645,17 +646,18 @@
             // 
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(1018, 677);
+            this.panel2.Location = new System.Drawing.Point(1018, 653);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(241, 240);
+            this.panel2.Size = new System.Drawing.Size(241, 257);
             this.panel2.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 240);
+            this.button1.Size = new System.Drawing.Size(241, 257);
             this.button1.TabIndex = 0;
             this.button1.Text = "计算（多点几下才准）";
             this.button1.UseVisualStyleBackColor = true;
@@ -672,6 +674,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.textBox_nt);
             this.panel3.Controls.Add(this.label41);
             this.panel3.Controls.Add(this.label23);
@@ -693,8 +696,19 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1018, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(241, 668);
+            this.panel3.Size = new System.Drawing.Size(241, 644);
             this.panel3.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(70, 500);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 66);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_nt
             // 
@@ -881,9 +895,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.30508F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.69492F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1262, 920);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.19566F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.80435F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1262, 913);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // panel1
@@ -951,12 +965,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1009, 668);
+            this.panel1.Size = new System.Drawing.Size(1009, 644);
             this.panel1.TabIndex = 0;
             // 
             // textBox_results
             // 
-            this.textBox_results.Location = new System.Drawing.Point(6, 522);
+            this.textBox_results.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox_results.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_results.Location = new System.Drawing.Point(33, 500);
             this.textBox_results.Multiline = true;
             this.textBox_results.Name = "textBox_results";
             this.textBox_results.ReadOnly = true;
@@ -1374,8 +1390,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1262, 920);
+            this.ClientSize = new System.Drawing.Size(1262, 913);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.Name = "EXHForm";
@@ -1515,5 +1530,6 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button button2;
     }
 }

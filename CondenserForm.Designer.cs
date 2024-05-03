@@ -98,6 +98,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_k = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -437,6 +438,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(760, 475);
@@ -797,6 +799,17 @@
             this.textBox_k.Size = new System.Drawing.Size(125, 25);
             this.textBox_k.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(3, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 87;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // CondenserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -894,6 +907,7 @@
         private System.Windows.Forms.TextBox textBox_mu;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboBox_k_model;
+        private System.Windows.Forms.Button button2;
     }
 }
 

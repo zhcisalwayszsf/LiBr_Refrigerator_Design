@@ -102,6 +102,7 @@
             this.textBox_result_n = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox_result_a0 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -743,6 +744,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(760, 475);
@@ -841,6 +843,17 @@
             this.textBox_result_a0.ReadOnly = true;
             this.textBox_result_a0.Size = new System.Drawing.Size(107, 25);
             this.textBox_result_a0.TabIndex = 38;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 88;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GhForm
             // 
@@ -941,5 +954,6 @@
         private System.Windows.Forms.TextBox textBox_mu;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboBox_k_model;
+        private System.Windows.Forms.Button button2;
     }
 }

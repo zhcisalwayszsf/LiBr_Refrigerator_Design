@@ -20,55 +20,103 @@ namespace LiBr_Refrigerator_Design
         private void button_condenser_Click(object sender, EventArgs e)
         {
             Form A_ConsenderForm = new CondenserForm();
-            A_ConsenderForm.ShowDialog();
+            this.Visible = false;
+            if (A_ConsenderForm.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_ConsenderForm.Dispose();
+            }
         }
 
         private void button_absorb_Click(object sender, EventArgs e)
         {
             Form A_AbsorbForm = new AbsorbForm();
-            A_AbsorbForm.ShowDialog();
+            this.Visible = false;
+            if (A_AbsorbForm.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_AbsorbForm.Dispose();
+            }
         }
 
         private void button_Evaporator_Click(object sender, EventArgs e)
         {
             Form A_Evaporator = new EvaporatorForm();
-            A_Evaporator.ShowDialog();
+            this.Visible = false;
+            if (A_Evaporator.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_Evaporator.Dispose();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form A_Gh = new GhForm();
-            A_Gh.ShowDialog();
+            this.Visible = false;
+            if (A_Gh.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_Gh.Dispose();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form A_Gl = new GlForm();
-            A_Gl.ShowDialog();
+            this.Visible = false;
+            if (A_Gl.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_Gl.Dispose();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form A_EXH = new EXHForm();
-            A_EXH.ShowDialog();
+            this.Visible = false;
+            if (A_EXH.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_EXH.Dispose();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form A_EXL = new EXLForm();
-            A_EXL.ShowDialog();
+            this.Visible = false;
+            if (A_EXL.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_EXL.Dispose();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Form A_LiBr = new LiBrForm();
-            A_LiBr.ShowDialog();
+            this.Visible = false;
+            if (A_LiBr.ShowDialog(this) != DialogResult.OK)
+            {
+                this.Visible = true;
+                A_LiBr.Dispose();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             Form A_K_conculator = new KForm();
-            A_K_conculator.ShowDialog();
+           // A_K_conculator.ShowDialog();
+            this.Visible=false;
+            if (A_K_conculator.ShowDialog(this) != DialogResult.OK)
+            {
+                 this.Visible = true;
+                A_K_conculator.Dispose(); 
+            }
+           
+
         }
     }
 }

@@ -23,7 +23,11 @@ namespace LiBr_Refrigerator_Design
         {
             if (textBox_a0.Text == string.Empty |
                 textBox_ai.Text == string.Empty |
-                textBox_lambda.Text == string.Empty
+                textBox_lambda.Text == string.Empty|
+                textBox_r0.Text == string.Empty |
+                textBox_ri.Text == string.Empty |
+                textBox_d0.Text == string.Empty |
+                textBox_di.Text == string.Empty 
                 )
             {
                 NoInputMessage();
@@ -83,6 +87,20 @@ namespace LiBr_Refrigerator_Design
                     }
                     e.Handled = false; // 是数字，处理输入
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (this.TopMost)
+            {
+                this.TopMost = false;
+                button2.Text = "置于顶层";
+            }
+            else
+            {
+                this.TopMost = true;
+                button2.Text = "取消顶层";
             }
         }
     }

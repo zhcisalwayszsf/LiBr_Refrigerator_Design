@@ -42,11 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_x = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox_cp);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button1);
@@ -180,6 +182,17 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "浓度(0-100)：";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(43, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 90;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // LiBrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -210,5 +223,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox_cp;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -619,7 +619,7 @@ namespace LiBr_Refrigerator_Design
         /// 溴化锂管外传热系数（三角叉排）
         /// </summary>
         /// <param name="lambda">流体热导率</param>
-        /// <param name="mu">流体粘性系数</param>
+        /// <param name="mu">流体粘性系数Pa·s</param>
         /// <param name="Pr">普朗特数</param>
         /// <param name="phi">折流板缺口与壳体截面积之比，自定</param>
         /// <param name="omega">流体的质量流速[kg/(m^2·s)]</param>
@@ -655,7 +655,7 @@ namespace LiBr_Refrigerator_Design
             Awt = Math.PI * d0 * d0 * nt * (1 - Fc)/8d;
             Ab = Awg - Awt;
             Ac = ls * (Ds - Dl + (Dl - d0) / s * (s - d0));
-            As = Math.Pow(Ab*Ac,2d);
+            As = Math.Pow(Ab*Ac,0.5);
             omega = G / As;
             
             double[] results = new double[9];
