@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaporatorForm));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_ri = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_flu_qv = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.comboBox_k_model = new System.Windows.Forms.ComboBox();
             this.textBox_evaporator_c = new System.Windows.Forms.TextBox();
@@ -65,6 +65,7 @@
             this.label_di = new System.Windows.Forms.Label();
             this.textBox_d0 = new System.Windows.Forms.TextBox();
             this.label_d0 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -244,17 +245,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(751, 466);
             this.panel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 88;
-            this.button2.Text = "置于顶层";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label29
             // 
@@ -484,6 +474,17 @@
             this.label_d0.Size = new System.Drawing.Size(91, 15);
             this.label_d0.TabIndex = 0;
             this.label_d0.Text = "(m)管外径：";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 88;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -861,11 +862,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(942, 593);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(960, 640);
             this.MinimumSize = new System.Drawing.Size(960, 640);
             this.Name = "EvaporatorForm";
-            this.ShowIcon = false;
             this.Text = "蒸发器";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

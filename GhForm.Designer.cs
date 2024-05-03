@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhForm));
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox_v = new System.Windows.Forms.TextBox();
@@ -93,6 +94,7 @@
             this.label_d0 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -102,7 +104,6 @@
             this.textBox_result_n = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox_result_a0 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -752,6 +753,17 @@
             this.panel2.Size = new System.Drawing.Size(179, 115);
             this.panel2.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 88;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label23);
@@ -844,17 +856,6 @@
             this.textBox_result_a0.Size = new System.Drawing.Size(107, 25);
             this.textBox_result_a0.TabIndex = 38;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 88;
-            this.button2.Text = "置于顶层";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // GhForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -862,9 +863,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(942, 593);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GhForm";
-            this.ShowIcon = false;
             this.Text = "高压发生器";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KForm));
             this.textBox_ai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_a0 = new System.Windows.Forms.TextBox();
@@ -263,9 +264,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_a0);
             this.Controls.Add(this.label7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "KForm";
-            this.ShowIcon = false;
             this.Text = "KForm";
             this.ResumeLayout(false);
             this.PerformLayout();

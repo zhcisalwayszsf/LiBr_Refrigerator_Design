@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiBrForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox_cp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_x = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(622, 313);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(43, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 90;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_cp
             // 
@@ -182,23 +194,13 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "浓度(0-100)：";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(43, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 90;
-            this.button2.Text = "置于顶层";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // LiBrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 313);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LiBrForm";
             this.Text = "LiBrForm";
             this.panel1.ResumeLayout(false);

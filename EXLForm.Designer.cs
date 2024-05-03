@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EXLForm));
             this.textBox_n3 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.textBox_s = new System.Windows.Forms.TextBox();
@@ -1005,6 +1006,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1262, 593);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EXLForm";
             this.Text = "EXLForm";

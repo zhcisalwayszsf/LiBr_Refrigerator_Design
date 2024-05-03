@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -38,7 +40,6 @@
             this.button_Evaporator = new System.Windows.Forms.Button();
             this.button_absorb = new System.Windows.Forms.Button();
             this.button_condenser = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 473);
             this.panel1.TabIndex = 0;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(85, 400);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 60);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "K值手动计算";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -149,16 +160,6 @@
             this.button_condenser.UseVisualStyleBackColor = true;
             this.button_condenser.Click += new System.EventHandler(this.button_condenser_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(85, 400);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 60);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "K值手动计算";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -166,9 +167,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(702, 473);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "mainForm";
-            this.ShowIcon = false;
             this.Text = "菜单";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

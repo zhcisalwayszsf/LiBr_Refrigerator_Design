@@ -14,9 +14,10 @@ namespace LiBr_Refrigerator_Design
     {
         public mainForm()
         {
+            CenterToScreen();
             InitializeComponent();
         }
-
+        
         private void button_condenser_Click(object sender, EventArgs e)
         {
             Form A_ConsenderForm = new CondenserForm();

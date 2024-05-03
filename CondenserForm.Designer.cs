@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CondenserForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.textBox_d0 = new System.Windows.Forms.TextBox();
             this.label_d0 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
@@ -98,7 +100,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_k = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -445,6 +446,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(179, 115);
             this.panel2.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(3, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 87;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -799,17 +811,6 @@
             this.textBox_k.Size = new System.Drawing.Size(125, 25);
             this.textBox_k.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(3, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 87;
-            this.button2.Text = "置于顶层";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // CondenserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -817,11 +818,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(942, 593);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(960, 640);
             this.MinimumSize = new System.Drawing.Size(960, 640);
             this.Name = "CondenserForm";
-            this.ShowIcon = false;
             this.Text = "冷凝器";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

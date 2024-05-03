@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EXHForm));
             this.textBox_t10 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox_ri = new System.Windows.Forms.TextBox();
@@ -1392,9 +1393,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 913);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EXHForm";
-            this.ShowIcon = false;
             this.Text = "高温热交换器";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

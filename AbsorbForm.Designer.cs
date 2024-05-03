@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbsorbForm));
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_tube_lambda = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.textBox_middle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox_ai = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_k = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox_tube_length = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -378,17 +379,6 @@
             this.panel4.Size = new System.Drawing.Size(751, 115);
             this.panel4.TabIndex = 3;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(0, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 86;
-            this.button2.Text = "置于顶层";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -481,6 +471,17 @@
             this.textBox_k.ReadOnly = true;
             this.textBox_k.Size = new System.Drawing.Size(158, 25);
             this.textBox_k.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(0, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 40);
+            this.button2.TabIndex = 86;
+            this.button2.Text = "置于顶层";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_tube_length
             // 
@@ -818,11 +819,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(942, 593);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(960, 640);
             this.MinimumSize = new System.Drawing.Size(960, 640);
             this.Name = "AbsorbForm";
-            this.ShowIcon = false;
             this.Text = "吸收器";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
