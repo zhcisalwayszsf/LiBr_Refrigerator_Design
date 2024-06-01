@@ -84,16 +84,7 @@ namespace LiBr_Refrigerator_Design
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form A_EXL = new EXLForm();
-            this.Visible = false;
-            if (A_EXL.ShowDialog(this) != DialogResult.OK)
-            {
-                this.Visible = true;
-                A_EXL.Dispose();
-            }
-        }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -118,6 +109,17 @@ namespace LiBr_Refrigerator_Design
             }
            
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form TubeForm1 = new TubeForm();
+            this.Visible = false;
+            if(TubeForm1.ShowDialog(this)!=DialogResult.OK)
+            {
+                this.Visible = true;
+                TubeForm1.Dispose();
+            }
         }
     }
 }

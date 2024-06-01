@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EXHForm));
-            this.textBox_t10 = new System.Windows.Forms.TextBox();
+            this.textBox_tb2 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox_ri = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -103,9 +103,14 @@
             this.textBox_m = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_t12 = new System.Windows.Forms.TextBox();
+            this.textBox_t1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox_ta2 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox_ta1 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.textBox_results = new System.Windows.Forms.TextBox();
             this.textBox_Fc = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -128,8 +133,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.textBox_n4 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox_tw = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.textBox_Nb = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.textBox_h = new System.Windows.Forms.TextBox();
@@ -141,7 +144,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_gh_q = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_t9 = new System.Windows.Forms.TextBox();
+            this.textBox_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_t2 = new System.Windows.Forms.TextBox();
@@ -157,24 +160,24 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox_t10
+            // textBox_tb2
             // 
-            this.textBox_t10.Location = new System.Drawing.Point(570, 267);
-            this.textBox_t10.Name = "textBox_t10";
-            this.textBox_t10.Size = new System.Drawing.Size(75, 25);
-            this.textBox_t10.TabIndex = 37;
-            this.textBox_t10.Tag = "input";
-            this.textBox_t10.Text = "127.3";
-            this.textBox_t10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
+            this.textBox_tb2.Location = new System.Drawing.Point(570, 321);
+            this.textBox_tb2.Name = "textBox_tb2";
+            this.textBox_tb2.Size = new System.Drawing.Size(75, 25);
+            this.textBox_tb2.TabIndex = 37;
+            this.textBox_tb2.Tag = "input";
+            this.textBox_tb2.Text = "64";
+            this.textBox_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(360, 270);
+            this.label17.Location = new System.Drawing.Point(360, 324);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 15);
+            this.label17.Size = new System.Drawing.Size(123, 15);
             this.label17.TabIndex = 36;
-            this.label17.Text = "(℃)t10：";
+            this.label17.Text = "(℃)tb2(高出)：";
             // 
             // textBox_ri
             // 
@@ -703,7 +706,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(70, 500);
+            this.button2.Location = new System.Drawing.Point(70, 528);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 66);
             this.button2.TabIndex = 85;
@@ -873,15 +876,15 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "管程数：";
             // 
-            // textBox_t12
+            // textBox_t1
             // 
-            this.textBox_t12.Location = new System.Drawing.Point(240, 217);
-            this.textBox_t12.Name = "textBox_t12";
-            this.textBox_t12.Size = new System.Drawing.Size(75, 25);
-            this.textBox_t12.TabIndex = 11;
-            this.textBox_t12.Tag = "input";
-            this.textBox_t12.Text = "160";
-            this.textBox_t12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
+            this.textBox_t1.Location = new System.Drawing.Point(240, 217);
+            this.textBox_t1.Name = "textBox_t1";
+            this.textBox_t1.Size = new System.Drawing.Size(75, 25);
+            this.textBox_t1.TabIndex = 11;
+            this.textBox_t1.Tag = "input";
+            this.textBox_t1.Text = "160";
+            this.textBox_t1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // tableLayoutPanel1
             // 
@@ -904,6 +907,11 @@
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.textBox_ta2);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.textBox_ta1);
+            this.panel1.Controls.Add(this.label57);
             this.panel1.Controls.Add(this.textBox_results);
             this.panel1.Controls.Add(this.textBox_Fc);
             this.panel1.Controls.Add(this.label52);
@@ -926,8 +934,6 @@
             this.panel1.Controls.Add(this.label36);
             this.panel1.Controls.Add(this.textBox_n4);
             this.panel1.Controls.Add(this.label27);
-            this.panel1.Controls.Add(this.textBox_tw);
-            this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.textBox_Nb);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.textBox_h);
@@ -935,7 +941,7 @@
             this.panel1.Controls.Add(this.textBox_ls);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label34);
-            this.panel1.Controls.Add(this.textBox_t10);
+            this.panel1.Controls.Add(this.textBox_tb2);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.textBox_ri);
             this.panel1.Controls.Add(this.label10);
@@ -953,9 +959,9 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.textBox_gh_q);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox_t9);
+            this.panel1.Controls.Add(this.textBox_tb1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox_t12);
+            this.panel1.Controls.Add(this.textBox_t1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox_t2);
             this.panel1.Controls.Add(this.label_r0_out);
@@ -969,11 +975,60 @@
             this.panel1.Size = new System.Drawing.Size(1009, 644);
             this.panel1.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.RosyBrown;
+            this.button3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(894, 532);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 62);
+            this.button3.TabIndex = 89;
+            this.button3.Text = "温度输入示例";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox_ta2
+            // 
+            this.textBox_ta2.Location = new System.Drawing.Point(570, 274);
+            this.textBox_ta2.Name = "textBox_ta2";
+            this.textBox_ta2.Size = new System.Drawing.Size(75, 25);
+            this.textBox_ta2.TabIndex = 88;
+            this.textBox_ta2.Tag = "input";
+            this.textBox_ta2.Text = "40.5";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(360, 277);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(123, 15);
+            this.label29.TabIndex = 87;
+            this.label29.Text = "(℃)ta2(高出)：";
+            // 
+            // textBox_ta1
+            // 
+            this.textBox_ta1.Location = new System.Drawing.Point(240, 274);
+            this.textBox_ta1.Name = "textBox_ta1";
+            this.textBox_ta1.Size = new System.Drawing.Size(75, 25);
+            this.textBox_ta1.TabIndex = 86;
+            this.textBox_ta1.Tag = "input";
+            this.textBox_ta1.Text = "127.3";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(30, 277);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(138, 15);
+            this.label57.TabIndex = 85;
+            this.label57.Text = "(℃)ta1(高温出)：";
+            // 
             // textBox_results
             // 
             this.textBox_results.BackColor = System.Drawing.SystemColors.Info;
             this.textBox_results.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_results.Location = new System.Drawing.Point(33, 500);
+            this.textBox_results.Location = new System.Drawing.Point(9, 510);
             this.textBox_results.Multiline = true;
             this.textBox_results.Name = "textBox_results";
             this.textBox_results.ReadOnly = true;
@@ -1074,7 +1129,7 @@
             // 
             // textBox_const_Di
             // 
-            this.textBox_const_Di.Location = new System.Drawing.Point(570, 320);
+            this.textBox_const_Di.Location = new System.Drawing.Point(910, 367);
             this.textBox_const_Di.Name = "textBox_const_Di";
             this.textBox_const_Di.Size = new System.Drawing.Size(75, 25);
             this.textBox_const_Di.TabIndex = 73;
@@ -1085,7 +1140,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(360, 323);
+            this.label38.Location = new System.Drawing.Point(700, 370);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(83, 15);
             this.label38.TabIndex = 72;
@@ -1113,7 +1168,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(700, 434);
+            this.label28.Location = new System.Drawing.Point(700, 470);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(75, 15);
             this.label28.TabIndex = 69;
@@ -1127,19 +1182,19 @@
             "K=Ki",
             "k=(K0+Ki)/2",
             "k=f(Ki,K0,lambda)(热阻法)"});
-            this.comboBox_k_model.Location = new System.Drawing.Point(781, 433);
+            this.comboBox_k_model.Location = new System.Drawing.Point(781, 469);
             this.comboBox_k_model.Name = "comboBox_k_model";
             this.comboBox_k_model.Size = new System.Drawing.Size(204, 23);
             this.comboBox_k_model.TabIndex = 68;
             // 
             // textBox_ai_input
             // 
-            this.textBox_ai_input.Location = new System.Drawing.Point(910, 390);
+            this.textBox_ai_input.Location = new System.Drawing.Point(910, 426);
             this.textBox_ai_input.Name = "textBox_ai_input";
             this.textBox_ai_input.Size = new System.Drawing.Size(75, 25);
             this.textBox_ai_input.TabIndex = 67;
             this.textBox_ai_input.Tag = "input";
-            this.textBox_ai_input.Text = "9000";
+            this.textBox_ai_input.Text = "3500";
             this.textBox_ai_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // textBox_s
@@ -1155,7 +1210,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(700, 390);
+            this.label36.Location = new System.Drawing.Point(700, 426);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(142, 15);
             this.label36.TabIndex = 66;
@@ -1178,25 +1233,6 @@
             this.label27.Size = new System.Drawing.Size(142, 30);
             this.label27.TabIndex = 52;
             this.label27.Text = "折流板缺口面积中的\r\n管子数n4：";
-            // 
-            // textBox_tw
-            // 
-            this.textBox_tw.Location = new System.Drawing.Point(240, 320);
-            this.textBox_tw.Name = "textBox_tw";
-            this.textBox_tw.Size = new System.Drawing.Size(75, 25);
-            this.textBox_tw.TabIndex = 49;
-            this.textBox_tw.Tag = "input";
-            this.textBox_tw.Text = "106.55";
-            this.textBox_tw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(30, 324);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(69, 15);
-            this.label29.TabIndex = 48;
-            this.label29.Text = "(℃)tw：";
             // 
             // textBox_Nb
             // 
@@ -1302,33 +1338,33 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "(kW)热负荷:";
             // 
-            // textBox_t9
+            // textBox_tb1
             // 
-            this.textBox_t9.Location = new System.Drawing.Point(240, 267);
-            this.textBox_t9.Name = "textBox_t9";
-            this.textBox_t9.Size = new System.Drawing.Size(75, 25);
-            this.textBox_t9.TabIndex = 13;
-            this.textBox_t9.Tag = "input";
-            this.textBox_t9.Text = "49.2";
-            this.textBox_t9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
+            this.textBox_tb1.Location = new System.Drawing.Point(240, 321);
+            this.textBox_tb1.Name = "textBox_tb1";
+            this.textBox_tb1.Size = new System.Drawing.Size(75, 25);
+            this.textBox_tb1.TabIndex = 13;
+            this.textBox_tb1.Tag = "input";
+            this.textBox_tb1.Text = "160";
+            this.textBox_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumbles);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 270);
+            this.label2.Location = new System.Drawing.Point(30, 324);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 15);
+            this.label2.Size = new System.Drawing.Size(138, 15);
             this.label2.TabIndex = 12;
-            this.label2.Text = "(℃)t9：";
+            this.label2.Text = "(℃)tb1(高温出)：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(30, 220);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 15);
+            this.label1.Size = new System.Drawing.Size(146, 15);
             this.label1.TabIndex = 10;
-            this.label1.Text = "(℃)t12：";
+            this.label1.Text = "(℃)t1(最高温in)：";
             // 
             // textBox_t2
             // 
@@ -1345,9 +1381,9 @@
             this.label_r0_out.AutoSize = true;
             this.label_r0_out.Location = new System.Drawing.Point(360, 220);
             this.label_r0_out.Name = "label_r0_out";
-            this.label_r0_out.Size = new System.Drawing.Size(69, 15);
+            this.label_r0_out.Size = new System.Drawing.Size(154, 15);
             this.label_r0_out.TabIndex = 4;
-            this.label_r0_out.Text = "(℃)t2：";
+            this.label_r0_out.Text = "(℃)t2(最低温out)：";
             // 
             // textBox_di
             // 
@@ -1396,7 +1432,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EXHForm";
-            this.Text = "高温热交换器";
+            this.Text = "管壳式热交换器";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1411,7 +1447,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_t10;
+        private System.Windows.Forms.TextBox textBox_tb2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox_ri;
         private System.Windows.Forms.Label label10;
@@ -1445,14 +1481,14 @@
         private System.Windows.Forms.TextBox textBox_m;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_t12;
+        private System.Windows.Forms.TextBox textBox_t1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox_tube_length;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_gh_q;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_t9;
+        private System.Windows.Forms.TextBox textBox_tb1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_t2;
@@ -1463,8 +1499,6 @@
         private System.Windows.Forms.Label label_d0;
         private System.Windows.Forms.TextBox textBox_n4;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox_tw;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox_Nb;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox_ls;
@@ -1532,5 +1566,10 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox_ta2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox_ta1;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Button button3;
     }
 }

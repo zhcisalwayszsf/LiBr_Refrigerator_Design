@@ -120,17 +120,18 @@ namespace LiBr_Refrigerator_Design
                 bool first_conculate = true;
                 double mess = double.Parse(textBox_first_K.Text);
 
-                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t10, t12, t2, tw, t9, m, flu_qv, G, Di, phi, q_exh, tube_lambda, mu_xi, mu_nong, lambda_xi, lambda_nong, Pr_xi, Pr_nong, h, Nb, ls, s, Cp_xi, Cp_nong, x_xi, x_nong, b3;
+                double k, a, l, n, speed, a0, ai, k0, ki, d0, di, r0, ri, t1, t2, ta2, ta1, tb1, tb2,m, flu_qv, G, Di, phi, q_exh, tube_lambda, mu_xi, mu_nong, lambda_xi, lambda_nong, Pr_xi, Pr_nong, h, Nb, ls, s, Cp_xi, Cp_nong, x_xi, x_nong, b3;
 
                 d0 = double.Parse(textBox_d0.Text);
                 di = double.Parse(textBox_di.Text);
                 r0 = double.Parse(textBox_r0.Text);
                 ri = double.Parse(textBox_ri.Text);
-                t10 = double.Parse(textBox_t10.Text);
-                t12 = double.Parse(textBox_t12.Text);
+                t1 = double.Parse(textBox_t1.Text);
                 t2 = double.Parse(textBox_t2.Text);
-                tw = double.Parse(textBox_tw.Text);
-                t9 = double.Parse(textBox_t9.Text);
+                ta1 = double.Parse(textBox_ta1.Text);
+                ta2 = double.Parse(textBox_ta2.Text);
+                tb1 = double.Parse(textBox_tb1.Text);
+                tb2= double.Parse(textBox_tb2.Text);
                 tube_lambda = double.Parse(textBox_tube_lambda.Text);
                 phi = double.Parse(textBox_phi.Text);
                 q_exh = double.Parse(textBox_gh_q.Text);
@@ -158,17 +159,17 @@ namespace LiBr_Refrigerator_Design
                 double omega; double[] results;
                 string[] names = new string[] { "D1", "theta", "Fc", "Awg", "Awt", "Ab", "Ac", "As" };
 
-                mu_nong = myFunction.LiBr_mu2((t12 + t10) / 2, x_nong * 100d);
-                mu_xi = myFunction.LiBr_mu2((t9 + t2) / 2, x_xi * 100d);
-                lambda_xi = myFunction.Libr_Lambda((t9 + t2) / 2, x_xi * 100d);
-                lambda_nong = myFunction.Libr_Lambda((t12 + t10) / 2, x_nong * 100d); ;
-                Cp_xi = myFunction.LiBr_Cp((t9 + t2) / 2, x_xi * 100d);
-                Cp_nong = myFunction.LiBr_Cp((t12 + t10) / 2, x_nong * 100d);
+                mu_nong = myFunction.LiBr_mu2((tb1 + tb2) / 2, x_nong * 100d);
+                mu_xi = myFunction.LiBr_mu2((ta1 + ta2) / 2, x_xi * 100d);
+                lambda_xi = myFunction.Libr_Lambda((ta1 + ta2) / 2, x_xi * 100d);
+                lambda_nong = myFunction.Libr_Lambda((tb1 + tb2) / 2, x_nong * 100d); ;
+                Cp_xi = myFunction.LiBr_Cp((ta1 + ta2) / 2, x_xi * 100d);
+                Cp_nong = myFunction.LiBr_Cp((tb1 + tb2) / 2, x_nong * 100d);
                 Pr_xi = Cp_xi * mu_xi / lambda_xi;
                 Pr_nong = Cp_nong * mu_nong / lambda_nong;
                 for (int i = 1000; i > 0; i--)
                 {
-                    a = myFunction.EXH_Area(q_exh, mess, t12, t10, t9, t2, tw);
+                    a = myFunction.EXH_Area(q_exh, mess, t1, t2, ta1, ta2, tb1,tb2);
                     n = myFunction.tubeNumb(a, l, d0);
                     speed = myFunction.fluSpeed(flu_qv, n, m, di);
                     ai = double.Parse(textBox_ai_input.Text);//ai查表
@@ -251,6 +252,12 @@ namespace LiBr_Refrigerator_Design
             }
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form imageDetails = new imageForm();
+            imageDetails.Show();
         }
     }
 }

@@ -182,7 +182,8 @@ namespace LiBr_Refrigerator_Design
             i = 5.89661165922573E-17;
             j = -6.67065538321912E-20;
             k = 3.26995946461926E-23;
-            nu= a + b * t + c * Math.Pow(t, 2) + d * Math.Pow(t, 3) + e * Math.Pow(t, 4) + f * Math.Pow(t, 5) + g * Math.Pow(t, 6) + h * Math.Pow(t, 7) + i * Math.Pow(t, 8) + j * Math.Pow(t, 9) + k * Math.Pow(t, 10);
+            nu= a + b * t + c * Math.Pow(t, 2) + d * Math.Pow(t, 3) + e * Math.Pow(t, 4) + f * Math.Pow(t, 5) + g * Math.Pow(t, 6) + h *
+                Math.Pow(t, 7) + i * Math.Pow(t, 8) + j * Math.Pow(t, 9) + k * Math.Pow(t, 10);
             return nu*1E-6;
         }
 
@@ -595,26 +596,12 @@ namespace LiBr_Refrigerator_Design
         /// <param name="t2"></param>
         /// <param name="tw"></param>
         /// <returns></returns>
-        public double EXH_Area(double q,double k,double t12, double t10, double t9, double t2, double tw)
+        public double EXH_Area(double q,double k,double t1, double t2, double ta1,double ta2, double tb1, double tb2 )
         {
-            double a = 1000 * q / k / (t12 - t2 - 0.35 * (t10 - tw) - 0.65*(t9 - t2));
+            double a = 1000 * q / k / (t1 - t2 - 0.35 * (ta1 - ta2) - 0.65*(tb1 - tb2));
             return a;
         }
-        /// <summary>
-        /// 低温热交换器传热面积
-        /// </summary>
-        /// <param name="q"></param>
-        /// <param name="k"></param>
-        /// <param name="t4"></param>
-        /// <param name="t7"></param>
-        /// <param name="t8"></param>
-        /// <param name="t2"></param>
-        /// <returns></returns>
-        public double EXL_Area(double q, double k, double t4, double t7, double t8, double t2)
-        {
-            double a = 1000 * q / k / (t4 - t2 - 0.35 * (t7 - t2) - 0.65 * (t4 - t8));
-            return a;
-        }
+  
         /// <summary>
         /// 溴化锂管外传热系数（三角叉排）
         /// </summary>

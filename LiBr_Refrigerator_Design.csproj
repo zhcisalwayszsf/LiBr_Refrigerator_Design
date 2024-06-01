@@ -67,12 +67,6 @@
     <Compile Include="EXHForm.Designer.cs">
       <DependentUpon>EXHForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EXLForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EXLForm.Designer.cs">
-      <DependentUpon>EXLForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Function.cs" />
     <Compile Include="CondenserForm.cs">
       <SubType>Form</SubType>
@@ -91,6 +85,12 @@
     </Compile>
     <Compile Include="GlForm.Designer.cs">
       <DependentUpon>GlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="imageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imageForm.Designer.cs">
+      <DependentUpon>imageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KForm.cs">
       <SubType>Form</SubType>
@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TubeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TubeForm.Designer.cs">
+      <DependentUpon>TubeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AbsorbForm.resx">
       <DependentUpon>AbsorbForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,14 +130,14 @@
     <EmbeddedResource Include="EXHForm.resx">
       <DependentUpon>EXHForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EXLForm.resx">
-      <DependentUpon>EXLForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GhForm.resx">
       <DependentUpon>GhForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlForm.resx">
       <DependentUpon>GlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imageForm.resx">
+      <DependentUpon>imageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KForm.resx">
       <DependentUpon>KForm.cs</DependentUpon>
@@ -151,6 +157,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TubeForm.resx">
+      <DependentUpon>TubeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
